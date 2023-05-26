@@ -26,6 +26,11 @@ def main():
             root = s.get_statics_path()
             return bottle.static_file(filename, root=root)
 
+        @s.app.get('/static/merch/<category>/<filename>')
+        def static_merch(category: str, filename: str):
+            root = s.get_statics_path() / 'merch' / category
+            return bottle.static_file(filename, root=root)
+
     @s.app.get('/')
     def index():
         return m.template
