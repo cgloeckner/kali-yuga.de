@@ -1,6 +1,6 @@
 import bottle
 
-import website
+import controller
 
 
 def main():
@@ -14,10 +14,10 @@ def main():
         'server': 'gevent'
     }
 
-    s = website.WebServer(args)
-    m = website.Merch(s)
-    m.load_from_file(website.MerchCategory.CDS)
-    m.load_from_file(website.MerchCategory.CLOTHS)
+    s = controller.WebServer(args)
+    m = controller.Merch(s)
+    m.load_from_file(controller.MerchCategory.CDS)
+    m.load_from_file(controller.MerchCategory.CLOTHS)
     m.render()
 
     if args['debug']:
