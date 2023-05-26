@@ -20,7 +20,7 @@ class Merch:
         self.template = None
 
     def load_from_file(self, category: MerchCategory) -> None:
-        filename = f'{self.engine.local_root}/model/merch/{category.value}.toml'
+        filename = f'{self.engine.local_root}/model/data/{category.value}.toml'
         with open(filename, 'rb') as file:
             self.data[category] = tomli.load(file)
 
