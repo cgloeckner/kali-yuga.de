@@ -1,16 +1,16 @@
-from gevent import monkey; monkey.patch_all()
-
-import bottle
 import pathlib
 import requests
+
+from gevent import monkey; monkey.patch_all()
+import bottle
 
 from typing import Dict
 
 
 class WebServer:
 
-    def __init__(self, local_root: pathlib.Path, args: Dict) -> None:
-        self.local_root = local_root
+    def __init__(self, args: Dict) -> None:
+        self.local_root = pathlib.Path('./')
         self.args = args
 
         self.app = bottle.default_app()
@@ -25,6 +25,10 @@ class WebServer:
             quiet=self.args['quiet'],
             server=self.args['server']
         )
+
+    def get_statics_path(self) -> pathlib.Path:
+        """Returns local path to static files (css sheets etc.)"""
+        return self.local_root / 'static'
 
     def get_public_url(self, route: str = '') -> str:
         """Returns the public uri with or without a route. HTTPS is assumed in production mode.

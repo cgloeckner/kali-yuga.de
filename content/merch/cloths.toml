@@ -1,0 +1,17 @@
+title="Kleidung"
+
+[random-shirt]
+title="T-Shirt"
+price=1500
+
+[girlie-xyz]
+title="Girlie-Shirt"
+price=1200
+
+[example-hoodie]
+title="Zipper"
+price=-1
+
+[invalid-example]
+title="interner Fehler"
+price=12345

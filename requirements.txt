@@ -1,4 +1,5 @@
 bottle~=0.12.25
 gevent~=22.10.2
 requests~=2.31.0
-
+tomli~=2.0.1
+StrEnum~=0.4.10

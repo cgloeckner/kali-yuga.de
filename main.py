@@ -1,10 +1,9 @@
-import pathlib
+import bottle
 
-import server
+import website
 
 
 def main():
-    root = pathlib.Path('./')
     args = {
         'host': '0.0.0.0',
         'domain': 'localhost',
@@ -15,11 +14,21 @@ def main():
         'server': 'gevent'
     }
 
-    s = server.WebServer(root, args)
+    s = website.WebServer(args)
+    m = website.Merch(s)
+    m.load_from_file(website.MerchCategory.CDS)
+    m.load_from_file(website.MerchCategory.CLOTHS)
+    m.render()
+
+    if args['debug']:
+        @s.app.get('/static/<filename>')
+        def static_files(filename: str):
+            root = s.get_statics_path()
+            return bottle.static_file(filename, root=root)
 
     @s.app.get('/')
     def index():
-        return 'hallo'
+        return m.template
 
     s.run()
 
