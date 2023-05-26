@@ -1,10 +1,10 @@
+import pathlib
+
 import tomli
 import bottle
 
 from enum import auto
 from strenum import LowercaseStrEnum
-
-from . import server
 
 
 class MerchCategory(LowercaseStrEnum):
@@ -13,14 +13,14 @@ class MerchCategory(LowercaseStrEnum):
 
 
 class Merch:
-    def __init__(self, engine: server.WebServer) -> None:
-        self.engine = engine
+    def __init__(self, root: pathlib.Path) -> None:
+        self.root = root
 
         self.data = dict()
         self.template = None
 
     def load_from_file(self, category: MerchCategory) -> None:
-        filename = f'{self.engine.local_root}/model/data/{category.value}.toml'
+        filename = f'{self.root}/model/data/{category.value}.toml'
         with open(filename, 'rb') as file:
             self.data[category] = tomli.load(file)
 

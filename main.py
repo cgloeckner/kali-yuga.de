@@ -15,10 +15,15 @@ def main():
     }
 
     s = controller.WebServer(args)
-    m = controller.Merch(s)
+
+    m = controller.Merch(s.local_root)
     m.load_from_file(controller.MerchCategory.CDS)
     m.load_from_file(controller.MerchCategory.CLOTHS)
     m.render()
+
+    g = controller.Gigs(s.local_root)
+    g.load_from_file()
+    g.render()
 
     if args['debug']:
         @s.app.get('/static/<filename>')
@@ -38,6 +43,10 @@ def main():
     @s.app.get('/merch')
     def merch():
         return m.template
+
+    @s.app.get('/gigs')
+    def gigs():
+        return g.template
 
     s.run()
 
