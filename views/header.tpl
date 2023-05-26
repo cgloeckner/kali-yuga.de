@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/static/normalize.css">
     <link rel="stylesheet" type="text/css" href="/static/layout.css">
+    <link rel="stylesheet" type="text/css" href="/static/merch.css">
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
     <script src="/static/navigation.js"></script>
     <script src="/static/collapse.js"></script>
