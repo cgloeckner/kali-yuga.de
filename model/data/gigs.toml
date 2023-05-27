@@ -17,3 +17,18 @@ date=2022-07-02
 title="Platzhalter"
 location="irgendwo"
 date=2024-06-01
+
+[upcoming-dummy2]
+title="Platzhalter2"
+location="irgendwo anders"
+date=2024-06-05
+
+[upcoming-dummy3]
+title="dritter Platzhalter"
+location="nirgendwo"
+date=2024-06-13
+
+[upcoming-dummy4]
+title="TBA"
+location="WIP"
+date=2024-06-20

@@ -1,10 +1,5 @@
     <table>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    %for show in data:
-        %include('gigs/show', show=show)
+    %for index, show in enumerate(data):
+        %include('gigs/show', show=show, index=index)
     %end
     </table>

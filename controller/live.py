@@ -6,7 +6,7 @@ import bottle
 from typing import Dict
 
 
-class Gigs:
+class LiveShows:
     def __init__(self, root: pathlib.Path) -> None:
         self.root = root
 

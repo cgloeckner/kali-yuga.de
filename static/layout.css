@@ -1,6 +1,9 @@
 :root {
     --text-color: #f5f5f5;
+    --link-color: #99ff99;
     --background-color: #434343;
+    --background-color-light: #494949;
+    --background-color-bright: #555555;
     --navi-color: #6c6c6c;
     --highlight-color: #a5a5a5;
 }
@@ -21,6 +24,11 @@ p {
     padding-right: 15px;
 }
 
+a {
+    color: var(--link-color);
+    cursor: pointer;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -28,4 +36,12 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
 }

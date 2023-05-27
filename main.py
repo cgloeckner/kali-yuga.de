@@ -7,7 +7,7 @@ def main():
     args = {
         'host': '0.0.0.0',
         'domain': 'localhost',
-        'port': 8080,
+        'port': 8001,
         'debug': True,
         'reloader': True,
         'quiet': False,
@@ -21,7 +21,7 @@ def main():
     m.load_from_file(controller.MerchCategory.CLOTHS)
     m.render()
 
-    g = controller.Gigs(s.local_root)
+    g = controller.LiveShows(s.local_root)
     g.load_from_file()
     g.render()
 
@@ -40,11 +40,11 @@ def main():
     def index():
         return bottle.template('home')
 
-    @s.app.get('/merch')
+    @s.app.get('/merchandise')
     def merch():
         return m.template
 
-    @s.app.get('/gigs')
+    @s.app.get('/live-shows')
     def gigs():
         return g.template
 
