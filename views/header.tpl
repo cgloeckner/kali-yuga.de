@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/static/normalize.css">
     <link rel="stylesheet" type="text/css" href="/static/layout.css">
     <link rel="stylesheet" type="text/css" href="/static/navigation.css">
+    <link rel="stylesheet" type="text/css" href="/static/home.css">
     <link rel="stylesheet" type="text/css" href="/static/lineup.css">
     <link rel="stylesheet" type="text/css" href="/static/gigs.css">
     <link rel="stylesheet" type="text/css" href="/static/merch.css">
