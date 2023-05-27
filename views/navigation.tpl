@@ -3,10 +3,9 @@
         <div class="title"></div>
         <div class="elements">
             <a href="/">Start</a>
-            <a href="/band">Band</a>
+            <a href="/band-infos">Band</a>
             <a href="/live-shows">Shows</a>
             <a href="/merchandise">Merch</a>
-            <a href="/contact">Kontakt</a>
             <a href="/imprint">Impressum</a>
         </div>
     </div>

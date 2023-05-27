@@ -1,17 +1,16 @@
-import pathlib
-
 import tomli
 import bottle
 
 from typing import Dict
 
+from .modules import BaseModule
 
-class LiveShows:
-    def __init__(self, root: pathlib.Path) -> None:
-        self.root = root
+
+class Gigs(BaseModule):
+    def __init__(self, **kwargs) -> None:
+        super().__init__(**kwargs)
 
         self.data = list()
-        self.template = None
 
     def update_lists(self, gigs: Dict) -> None:
         # group by years
@@ -33,7 +32,4 @@ class LiveShows:
         self.update_lists(gigs)
 
     def render(self) -> None:
-        self.template = bottle.template('gigs/index', data=self.data)
-
-    def get_template(self) -> str:
-        return self.template
+        self.template = bottle.template('gigs/index', data=self.data, email=self.email)

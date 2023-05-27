@@ -4,7 +4,7 @@
 
 <h1>Live Shows</h1>
 
-<p class="center"><a href="mailto:booking@kali-yuga.de">booking@kali-yuga.de</a></p>
+<p class="center"><a href="mailto:{{email}}">{{email}}</a></p>
 
 %years_desc = sorted(data.keys(), key=lambda v: -v)
 %for year in years_desc:
