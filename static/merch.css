@@ -11,6 +11,7 @@ div.merch > div > div.container {
 
 div.merch > div > div.toggle {
     user-select: none;
+    padding: 10px;
 }
 
 div.merch > div > div.toggle > span:hover {
@@ -19,41 +20,57 @@ div.merch > div > div.toggle > span:hover {
 
 div.merch > div > div > div.item {
     width: 20vw;
-    float: left;
 
-    border-radius: 25px;
-    margin: 1vw;
+    float: left;
+    text-align: center;
+
+    border-radius: 5px;
+    margin: 1.5vw;
+    padding: 1.5vw;
 
     box-sizing: border-box;
+
+    background-color: var(--background-color-light);
 }
 
 div.merch > div > div > div.item:hover {
-/*    background-color: var(--highlight-color); */
+    /*background-color: var(--background-color-bright);*/
 }
 
-div.merch > div > div > div.item > img.preview {
+div.merch > div > div > div.item > img.artwork {
     max-width: 15vw;
     max-height: 15vw;
 }
 
-div.merch > div > div > div.item > span {
-    text-align: center;
+div.merch > div > div > div.item > div {
     padding: 5px;
 }
 
-div.merch > div > div > div.item > span > span.title {
+div.merch > div > div > div.item > div.title {
     display: block;
-    text-decoration: italic;
+    font-weight: bold;
+    height: 5.0vw;
 }
 
-div.merch > div > div > div.item > span > span.price {
+div.merch > div > div > div.item > div.listen {
     display: block;
-    font-size: 2.5vh;
+    font-weight: bold;
+    height: 2.5vw;
+}
+
+div.merch > div > div > div.item > div.details {
+    display: block;
+    font-style: italic;
+}
+
+div.merch > div > div > div.item > div.price {
+    display: block;
+    font-size: large;
 
     padding: 10px;
 }
 
-div.merch > div > div > div.item > span > span.sold {
+div.merch > div > div > div.item > div.sold {
     font-weight: bold;
     color: red;
 }
@@ -61,7 +78,7 @@ div.merch > div > div > div.item > span > span.sold {
 /* show as burger menu on small screen */
 @media screen and (max-width: 800px) {
 
-    div.merch > div > div > div.item > img.preview {
+    div.merch > div > div > div.item > img.artwork {
         max-width: 27vw;
     }
 

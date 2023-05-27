@@ -39,6 +39,10 @@ img {
     margin-right: auto;
 }
 
+img.icon {
+    width: 24px;
+}
+
 h1 {
     text-align: center;
 }

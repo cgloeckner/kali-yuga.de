@@ -2,7 +2,7 @@
     %euro = price // 100
     %cent = price % 100
     %cent = f'{cent:02d}'
-                    <span class="price">{{euro}},{{cent}} €</span>
+                    <div class="price">{{euro}},{{cent}} €</div>
 %else:
-                    <span class="price sold">ausverkauft</span>
+                    <div class="price sold">ausverkauft</div>
 %end
