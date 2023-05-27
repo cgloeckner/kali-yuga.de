@@ -59,13 +59,18 @@ def run():
     def home_page():
         return bottle.template('home')
 
-    @s.app.get('/merchandise')
-    def merch_page():
-        return m.template
+    @s.app.get('/lineup-infos')
+    @bottle.view('lineup/index')
+    def lineup_page():
+        return dict()
 
     @s.app.get('/live-shows')
     def gigs_page():
         return g.template
+
+    @s.app.get('/merchandise')
+    def merch_page():
+        return m.template
 
     @s.app.get('/impressum')
     @bottle.view('impressum')

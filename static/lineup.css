@@ -1,0 +1,37 @@
+div.lineup {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.overview {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+div.lineup > div.overview > span.member {
+    display: inline-block;
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+div.lineup > div.overview > span.member > img.portrait {
+    border-radius: 15px;
+    width: 100%;
+}
+
+div.lineup > div.overview > span.member > div.name {
+    text-align: center;
+    font-style: italic;
+
+    position: relative;
+    top: -3vh;
+    user-select: none;
+
+    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
