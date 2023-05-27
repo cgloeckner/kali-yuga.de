@@ -6,6 +6,6 @@
             <a href="/band-infos">Band</a>
             <a href="/live-shows">Shows</a>
             <a href="/merchandise">Merch</a>
-            <a href="/imprint">Impressum</a>
+            <a href="/impressum" class="right">Impressum</a>
         </div>
     </div>

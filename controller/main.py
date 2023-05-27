@@ -42,6 +42,8 @@ def run():
     g.load_from_file()
     g.render()
 
+    contact_email = get_email_address(Recipient.CONTACT, args['domain'])
+
     if args['debug']:
         @s.app.get('/static/<filename>')
         def static_files(filename: str):
@@ -64,5 +66,10 @@ def run():
     @s.app.get('/live-shows')
     def gigs_page():
         return g.template
+
+    @s.app.get('/impressum')
+    @bottle.view('impressum')
+    def impressum_page():
+        return dict(email=contact_email)
 
     s.run()

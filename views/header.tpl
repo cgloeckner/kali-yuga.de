@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/static/navigation.css">
     <link rel="stylesheet" type="text/css" href="/static/gigs.css">
     <link rel="stylesheet" type="text/css" href="/static/merch.css">
+    <link rel="stylesheet" type="text/css" href="/static/impressum.css">
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
     <script src="/static/navigation.js"></script>
     <script src="/static/collapse.js"></script>

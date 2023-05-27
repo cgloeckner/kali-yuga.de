@@ -38,6 +38,10 @@ div.navigation > div.elements > a {
     cursor: pointer;
 }
 
+div.navigation > div.elements > a.right {
+    float: right;
+}
+
 div.navigation > div.elements > a:hover {
     background-color: var(--highlight-color);
 }
@@ -68,6 +72,10 @@ div.navigation > div.elements > a:hover {
 
     div.navigation > div.elements > a {
         display: block;
+    }
+
+    div.navigation > div.elements > a.right {
+        float: unset;
     }
 
     iframe#content {

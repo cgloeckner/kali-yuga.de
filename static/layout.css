@@ -22,6 +22,7 @@ p {
     text-justify: inter-word;
     padding: 10px;
     padding-right: 15px;
+    line-height: 1.5;
 }
 
 a {
@@ -44,4 +45,9 @@ h1 {
 
 .center {
     text-align: center;
+}
+
+hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
