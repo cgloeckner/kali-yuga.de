@@ -61,6 +61,8 @@ div.navigation > div.elements > a {
     border-radius: 10px;
 
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
 }
 
 div.navigation > div.elements > a.right {
@@ -72,7 +74,7 @@ div.navigation > div.elements > a:hover {
 }
 
 /* show as burger menu on small screen */
-@media screen and (max-width: 800px) {
+@media screen and ((max-width: 500px) or (max-height: 300px)) {
 
     div.navigation {
         width: 100%;
