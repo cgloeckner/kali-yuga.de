@@ -46,7 +46,6 @@ div.navigation > div.elements {
     z-index: 2;
 
     background-color: var(--background-color);
-    opacity: 0.75;
 }
 
 div.navigation > div.icon:hover ~ div.elements,
@@ -61,7 +60,6 @@ div.navigation > div.elements > a {
 
     border-radius: 10px;
 
-    color: var(--text-color);
     cursor: pointer;
 }
 

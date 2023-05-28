@@ -44,6 +44,9 @@ div.merch > div.grouping > div.container > div.item > img.preview {
     width: 100%;
 }
 
+div.merch > div.grouping > div.container > div.item > img.preview:hover {
+}
+
 div.merch > div.grouping > div.container > div.item > div {
     padding: 5px;
 }

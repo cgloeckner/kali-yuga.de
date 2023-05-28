@@ -2,7 +2,7 @@
     </div>
 
     <p class="footer center">
-        &copy; 2023 | KALI YUGA | <a href="/imprint" class="right">Imprint</a> | <a href="/press">Press/Downloads</a>
+        &copy; 2023 | KALI YUGA | <a href="/press">Press Kit</a> | <a href="/imprint" class="right">Imprint</a>
     </p>
 
 </body>
