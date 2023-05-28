@@ -18,6 +18,9 @@
     <script src="/static/navigation.js"></script>
     <script src="/static/collapse.js"></script>
     <title>Kali Yuga</title>
+    <meta name="description" content="KALI YUGA ist eine Melodic-Death-Metal-Band aus Gera. Eik Halle (Gitarre), Michael Albert (Gitarre), Jan Koch (Bass), Christian Glöckner (Gesang) und Jean-Peer Krutz (Schlagzeug) bilden das Line-Up.">
+    <meta name="keywords" content="">
+    <meta name="format-detection" content="telephone=yes">
 </head>
 
 <body>
