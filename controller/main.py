@@ -37,17 +37,17 @@ def run():
     m = merch.Merch(root=s.local_root, email=get_email_address(Recipient.MERCH, args['domain']))
     m.load_from_file(merch.MerchCategory.CDS)
     m.load_from_file(merch.MerchCategory.CLOTHS)
-    m.render()
+    m.render(contact_email=contact_email)
 
     # load live shows
     g = gigs.Gigs(root=s.local_root, email=get_email_address(Recipient.BOOKING, args['domain']))
     g.load_from_file()
-    g.render()
+    g.render(contact_email=contact_email)
 
     # load lineup
     l = lineup.Lineup(root=s.local_root, email=contact_email)
     l.load_from_file()
-    l.render()
+    l.render(contact_email=contact_email)
 
     if args['debug']:
         @s.app.get('/static/<filename>')
@@ -62,7 +62,7 @@ def run():
 
     @s.app.get('/')
     def home_page():
-        return bottle.template('home')
+        return bottle.template('home', contact_email=contact_email)
 
     @s.app.get('/lineup-infos')
     def lineup_page():
@@ -79,6 +79,6 @@ def run():
     @s.app.get('/imprint')
     @bottle.view('impressum')
     def impressum_page():
-        return dict(email=contact_email)
+        return dict(email=contact_email, contact_email=contact_email)
 
     s.run()

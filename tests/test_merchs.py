@@ -17,5 +17,5 @@ class TestMerchModule(unittest.TestCase):
             enum_value = controller.MerchCategory(value_str)
             self.merch.load_from_file(enum_value)
 
-        self.merch.render()
+        self.merch.render(contact_email=self.merch.email)
         self.assertIsNotNone(self.merch.template)

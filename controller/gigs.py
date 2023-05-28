@@ -35,5 +35,5 @@ class Gigs(BaseModule):
 
         self.data = self.process_gigs(gigs)
 
-    def render(self) -> None:
-        self.template = bottle.template('gigs/index', data=self.data, email=self.email)
+    def render(self, contact_email: str) -> None:
+        self.template = bottle.template('gigs/index', data=self.data, email=self.email, contact_email=contact_email)

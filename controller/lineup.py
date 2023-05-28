@@ -17,5 +17,5 @@ class Lineup(BaseModule):
         with open(filename, 'rb') as file:
             self.data = tomli.load(file)
 
-    def render(self) -> None:
-        self.template = bottle.template('lineup/index', data=self.data)
+    def render(self, contact_email: str) -> None:
+        self.template = bottle.template('lineup/index', data=self.data, contact_email=contact_email)

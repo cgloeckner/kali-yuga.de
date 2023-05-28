@@ -49,6 +49,6 @@ class TestGigsModule(unittest.TestCase):
         # NOTE: loads from the files provided in this repository
         # hence this is kind of a data validation test
         self.gigs.load_from_file()
-        self.gigs.render()
+        self.gigs.render(contact_email=self.gigs.email)
 
         self.assertIsNotNone(self.gigs.template)

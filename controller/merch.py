@@ -24,5 +24,5 @@ class Merch(BaseModule):
         with open(filename, 'rb') as file:
             self.data[category] = tomli.load(file)
 
-    def render(self) -> None:
-        self.template = bottle.template('merch/index', data=self.data, email=self.email)
+    def render(self, contact_email: str) -> None:
+        self.template = bottle.template('merch/index', data=self.data, email=self.email, contact_email=contact_email)
