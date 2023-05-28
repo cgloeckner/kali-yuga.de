@@ -1,37 +1,24 @@
 %include('header')
 
-<div class='lineup'>
+<img class="title" src="/content/titles/lineup.jpg" />
 
-<h1>Lineup</h1>
+<div class="lineup">
+
+<h1 class="shifted">Lineup</h1>
+
+<p>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
 
 <div class="overview">
-    <span class="member">
-        <img class="portrait" src="/content/lineup/michael.jpg" />
-        <div class="name">Michael</div>
-    </span>
-    <span class="member">
-        <img class="portrait" src="/content/lineup/jean-peer.jpg" />
-        <div class="name">Jean-Peer</div>
-    </span>
-    <span class="member">
-        <img class="portrait" src="/content/lineup/christian.jpg" />
-        <div class="name">Christian</div>
-    </span>
-    <span class="member">
-        <img class="portrait" src="/content/lineup/eik.jpg" />
-        <div class="name">Eik</div>
-    </span>
-    <span class="member">
-        <img class="portrait" src="/content/lineup/jan.jpg" />
-        <div class="name">Jan</div>
-    </span>
+%for key in data:
+    %include('lineup/member', key=key, data=data[key])
+%end
 </div>
 
-tba: Infos bei Klick aufklappen
-
-<hr />
-
-tba: Presskit Download
+<p>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
 
 </div>
 

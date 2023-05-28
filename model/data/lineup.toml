@@ -1,0 +1,30 @@
+[michael]
+name="Michael Albert"
+nickname="Michbär"
+position="Gitarre"
+tasks=["Booking"]
+since=2009
+
+[christian]
+name="Christian Glöckner"
+nickname="glocke"
+position="Gesang"
+tasks=["In-Ear-Monitoring", "Homepage"]
+since=2018
+
+[eik]
+name="Eik Halle"
+position="Gitarre"
+tasks=["Booking"]
+
+[jan]
+name="Jan Koch"
+nickname="Kocher"
+position="Bass"
+tasks=["Public Relations"]
+
+[jean]
+name="Jean-Peer Krutz"
+position="Schlagzeug"
+since=2012
+tasks=["Mechandise"]

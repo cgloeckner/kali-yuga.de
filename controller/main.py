@@ -1,6 +1,6 @@
 import bottle
 
-from . import server, merch, gigs
+from . import server, merch, gigs, lineup
 
 
 from enum import auto
@@ -31,6 +31,8 @@ def run():
 
     s = server.WebServer(args)
 
+    contact_email = get_email_address(Recipient.CONTACT, args['domain'])
+
     # load merchandise
     m = merch.Merch(root=s.local_root, email=get_email_address(Recipient.MERCH, args['domain']))
     m.load_from_file(merch.MerchCategory.CDS)
@@ -42,7 +44,10 @@ def run():
     g.load_from_file()
     g.render()
 
-    contact_email = get_email_address(Recipient.CONTACT, args['domain'])
+    # load lineup
+    l = lineup.Lineup(root=s.local_root, email=contact_email)
+    l.load_from_file()
+    l.render()
 
     if args['debug']:
         @s.app.get('/static/<filename>')
@@ -60,9 +65,8 @@ def run():
         return bottle.template('home')
 
     @s.app.get('/lineup-infos')
-    @bottle.view('lineup/index')
     def lineup_page():
-        return dict()
+        return l.template
 
     @s.app.get('/live-shows')
     def gigs_page():

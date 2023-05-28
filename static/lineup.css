@@ -6,35 +6,83 @@ div.lineup {
 }
 
 div.overview {
+/*
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     width: 100%;
+*/
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 div.lineup > div.overview > span.member {
     display: inline-block;
     padding: 5px;
 
-    cursor: pointer;
+    width: 25vw;
+    max-width: 300px;
 }
 
 div.lineup > div.overview > span.member > img.portrait {
-    border-radius: 15px;
+    border-radius: 5px;
     width: 100%;
 }
 
-div.lineup > div.overview > span.member > div.name {
+div.lineup > div.overview > span.member > img.portrait:hover {
+}
+
+div.lineup > div.overview > span.member > div {
     text-align: center;
-    font-style: italic;
+    line-height: 1.5;
 
     /* move up and release spacing below */
+    /*
     position: relative;
-    top: -30px;
+    top: -50px;
     user-select: none;
     height: 0px;
     margin: 0px;
 
     text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+    */
+}
+
+div.lineup > div.overview > span.member > div.name {
+    font-weight: bold;
+    font-size: large;
+}
+
+
+div.lineup > div.overview > span.member > div.nickname {
+    font-style: italic;
+}
+
+div.lineup > div.overview > span.member > div.position {
+}
+
+div.lineup > div.overview > span.member > div.tasks {
+    font-size: small;
+    font-style: italic;
+}
+
+/* shrink on smaller screen */
+@media screen and (max-width: 800px) {
+
+    div.lineup > div.overview > span.member {
+        width: 40%;
+        max-width: unset;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    div.lineup > div.overview > span.member {
+        width: 50%;
+        max-width: unset;
+    }
 }
