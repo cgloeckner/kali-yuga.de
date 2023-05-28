@@ -11,6 +11,10 @@
 html {
     background-color: var(--background-color);
     color: var(--text-color);
+
+    background-image: url('/content/background.jpg');
+    background-size: 75%;
+    background-repeat: repeat;
 }
 
 html, body {
@@ -47,15 +51,17 @@ img {
 
 img.title {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
     object-position: 100% 10%;
     transform-origin: center;
 
-    filter: grayscale(1.0) brightness(0.5);
+    transform: rotate(5deg);
+    filter: grayscale(1.0) brightness(0.5) /* blur(1px) */ ;
 
     position: relative;
-    z-index: -100;
+    top: -15px;
+    z-index: -1;
 }
 
 img.icon {
@@ -71,13 +77,15 @@ h1.shifted {
 
     /* move up and release spacing below */
     position: relative;
-    top: -90px;
+    top: -140px;
     height: 0px;
     margin: 5px;
 
     font-size: xxx-large;
     text-transform: uppercase;
     letter-spacing: 1rem;
+
+    z-index: 1;
 }
 
 .center {
@@ -98,7 +106,7 @@ p.footer {
 
     h1.shifted {
         font-size: xx-large;
-        top: -50px;
+        top: -90px;
     }
 
     img.title {

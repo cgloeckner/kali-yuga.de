@@ -1,8 +1,10 @@
 %include('header')
 
+<img class="title" src="/content/titles/home.jpg" />
+
 <div class="home">
 
-    <img src="/content/logo_inverted.png" />
+    <img class="large-logo" src="/content/logo_inverted.png" />
 
     <div class="youtube">
         <iframe class="youtube" width="560" height="315" src="https://www.youtube-nocookie.com/embed/VrDJTOHajn8" title="YouTube video player"

@@ -5,6 +5,10 @@ div.home {
     padding-right: 15px;
 }
 
+div.home > img.large-logo {
+    padding: 25px;
+}
+
 div.home > div.youtube {
     display: flex;
     flex-wrap: wrap;

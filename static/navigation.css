@@ -1,4 +1,4 @@
-img.logo {
+img.navi-logo {
     height: 10vw;
     max-height: 100px;
     padding: 10px;
@@ -7,13 +7,16 @@ img.logo {
     vertical-align: sub;
 
     position: absolute;
+    z-index: 10;
 }
 
 div.navigation {
     width: 100%;
     height: 55px;
     display: inline-block;
-    background-color: transparent
+    background-color: transparent;
+
+    position: fixed;
 }
 
 div.navigation > div.icon {
@@ -38,7 +41,12 @@ div.navigation > div.icon:hover {
 div.navigation > div.elements {
     text-align: center;
     float: right;
-    padding: 3px;
+
+    border-radius: 10px;
+    z-index: 2;
+
+    background-color: var(--background-color);
+    opacity: 0.75;
 }
 
 div.navigation > div.icon:hover ~ div.elements,
@@ -50,6 +58,8 @@ div.navigation > div.elements > a {
     text-decoration: none;
     display: inline-block;
     padding: 15px;
+
+    border-radius: 10px;
 
     color: var(--text-color);
     cursor: pointer;
@@ -85,9 +95,12 @@ div.navigation > div.elements > a:hover {
         background-color: var(--background-color-light);
         width: 150px;
 
-        z-index: 10;
+        z-index: 2;
         position: absolute;
         right: 0px;
+        top: 55px;
+
+        opacity: 1.0;
     }
 
     div.navigation > div.elements > a {
