@@ -1,6 +1,6 @@
 import bottle
 
-from . import server, merch, gigs, lineup
+from . import server, feed, lineup, gigs, merch
 
 
 from enum import auto
@@ -33,21 +33,26 @@ def run():
 
     contact_email = get_email_address(Recipient.CONTACT, args['domain'])
 
-    # load merchandise
-    m = merch.Merch(root=s.local_root, email=get_email_address(Recipient.MERCH, args['domain']))
-    m.load_from_file(merch.MerchCategory.CDS)
-    m.load_from_file(merch.MerchCategory.CLOTHS)
-    m.render(contact_email=contact_email)
+    # load feed
+    f = feed.Feed(root=s.local_root, email=contact_email)
+    f.load_from_file()
+    f.render(contact_email=contact_email)
+
+    # load lineup
+    l = lineup.Lineup(root=s.local_root, email=contact_email)
+    l.load_from_file()
+    l.render(contact_email=contact_email)
 
     # load live shows
     g = gigs.Gigs(root=s.local_root, email=get_email_address(Recipient.BOOKING, args['domain']))
     g.load_from_file()
     g.render(contact_email=contact_email)
 
-    # load lineup
-    l = lineup.Lineup(root=s.local_root, email=contact_email)
-    l.load_from_file()
-    l.render(contact_email=contact_email)
+    # load merchandise
+    m = merch.Merch(root=s.local_root, email=get_email_address(Recipient.MERCH, args['domain']))
+    m.load_from_file(merch.MerchCategory.CDS)
+    m.load_from_file(merch.MerchCategory.CLOTHS)
+    m.render(contact_email=contact_email)
 
     if args['debug']:
         @s.app.get('/static/<filename>')
@@ -61,8 +66,8 @@ def run():
             return bottle.static_file(path, root=root)
 
     @s.app.get('/')
-    def home_page():
-        return bottle.template('home', contact_email=contact_email)
+    def feed_page():
+        return f.template
 
     @s.app.get('/lineup-infos')
     def lineup_page():

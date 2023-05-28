@@ -1,21 +1,30 @@
-div.home {
+div.feed {
     margin-left: auto;
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-div.home > img.large-logo {
+div.feed > img.large-logo {
     padding: 25px;
+
+/*
+    width: 50%;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+*/
 }
 
-div.home > div.youtube {
+div.feed > div.elements {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
 
-div.home > div.youtube > iframe {
+div.feed > div.elements > iframe {
     padding: 10px;
 }

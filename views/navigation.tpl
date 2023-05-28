@@ -6,7 +6,7 @@
         <div class="icon">&#x2261;</div>
 
         <div class="elements">
-            <a class="hoverable" href="/">Start</a>
+            <a class="hoverable" href="/">Feed</a>
             <a class="hoverable" href="/lineup-infos">Lineup</a>
             <a class="hoverable" href="/live-shows">Shows</a>
             <a class="hoverable" href="/merchandise">Merch</a>
