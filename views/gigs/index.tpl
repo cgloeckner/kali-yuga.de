@@ -1,8 +1,10 @@
 %include('header')
 
+<img class="title" src="/content/titles/gigs.jpg" />
+
 <div class="gigs">
 
-<h1>Live Shows</h1>
+<h1 class="shifted">Live Shows</h1>
 
 <p class="center"><a href="mailto:{{email}}">{{email}}</a></p>
 

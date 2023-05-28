@@ -21,7 +21,7 @@ def get_email_address(recipient: Recipient, domain: str) -> str:
 def run():
     args = {
         'host': '0.0.0.0',
-        'domain': 'localhost',
+        'domain': 'kali-yuga.de',
         'port': 8001,
         'debug': True,
         'reloader': True,
@@ -72,7 +72,7 @@ def run():
     def merch_page():
         return m.template
 
-    @s.app.get('/impressum')
+    @s.app.get('/imprint')
     @bottle.view('impressum')
     def impressum_page():
         return dict(email=contact_email)

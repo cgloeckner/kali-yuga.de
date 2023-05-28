@@ -1,15 +1,19 @@
 img.logo {
-    height: 35px;
+    height: 10vw;
+    max-height: 100px;
     padding: 10px;
 
     display: inline-block;
     vertical-align: sub;
+
+    position: absolute;
 }
 
 div.navigation {
     width: 100%;
+    height: 55px;
     display: inline-block;
-    background-color: var(--background-color-light);
+    background-color: transparent
 }
 
 div.navigation > div.icon {
@@ -61,8 +65,10 @@ div.navigation > div.elements > a:hover {
 
 /* show as burger menu on small screen */
 @media screen and (max-width: 800px) {
+
     div.navigation {
         width: 100%;
+        background-color: var(--background-color-light);
     }
 
     div.navigation > div.icon {

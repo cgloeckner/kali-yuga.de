@@ -86,6 +86,7 @@ div.merch > div.grouping > div.container > div.item > div.sold {
     }
 
 }
+
 @media screen and (max-width: 600px) {
 
     div.merch > div.grouping > div.container > div.item {

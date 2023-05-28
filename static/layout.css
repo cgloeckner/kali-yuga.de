@@ -45,12 +45,39 @@ img {
     margin-right: auto;
 }
 
+img.title {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: 100% 10%;
+    transform-origin: center;
+
+    filter: grayscale(1.0) brightness(0.5);
+
+    position: relative;
+    z-index: -100;
+}
+
 img.icon {
     width: 24px;
 }
 
 h1 {
     text-align: center;
+}
+
+h1.shifted {
+    user-select: none;
+
+    /* move up and release spacing below */
+    position: relative;
+    top: -90px;
+    height: 0px;
+    margin: 5px;
+
+    font-size: xxx-large;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
 }
 
 .center {
@@ -65,4 +92,17 @@ hr {
 p.footer {
     padding: 25px;
     font-size: x-small;
+}
+
+@media screen and (max-width: 800px) {
+
+    h1.shifted {
+        font-size: xx-large;
+        top: -50px;
+    }
+
+    img.title {
+        height: 200px;
+    }
+
 }

@@ -28,9 +28,12 @@ div.lineup > div.overview > span.member > div.name {
     text-align: center;
     font-style: italic;
 
+    /* move up and release spacing below */
     position: relative;
-    top: -3vh;
+    top: -30px;
     user-select: none;
+    height: 0px;
+    margin: 0px;
 
     text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
                1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
