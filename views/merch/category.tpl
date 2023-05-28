@@ -1,4 +1,4 @@
-    <div>
+    <div class="grouping">
         <div class="toggle">
             <span onClick="toggleCollapse('{{category}}');">
                 <span id="{{category}}_button">&#9662;</span> {{data['title']}}
