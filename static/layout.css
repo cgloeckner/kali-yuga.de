@@ -1,11 +1,11 @@
 :root {
     --text-color: #f5f5f5;
-    --link-color: #99ff99;
-    --background-color: #434343;
-    --background-color-light: #494949;
-    --background-color-bright: #555555;
-    --navi-color: #6c6c6c;
-    --highlight-color: #a5a5a5;
+    --link-color: #ffffff;
+    --background-color: #030303;
+    --background-color-light: #191919;
+    --background-color-bright: #353535;
+
+    font-family: sans-serif;
 }
 
 html {
@@ -28,6 +28,12 @@ p {
 a {
     color: var(--link-color);
     cursor: pointer;
+
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 img {
@@ -54,4 +60,9 @@ h1 {
 hr {
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+p.footer {
+    padding: 25px;
+    font-size: x-small;
 }
