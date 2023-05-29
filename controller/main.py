@@ -1,4 +1,5 @@
 import pathlib
+
 import bottle
 
 from enum import auto
@@ -18,11 +19,11 @@ def get_email_address(recipient: Recipient, domain: str) -> str:
     return f'{recipient.value}@{domain}'
 
 
-def run():
+def run(port: int):
     args = {
         'host': '0.0.0.0',
         'domain': 'kali-yuga.de',
-        'port': 8001,
+        'port': port,
         'debug': True,
         'reloader': False,
         'quiet': False,
