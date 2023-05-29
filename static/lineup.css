@@ -18,7 +18,7 @@ div.overview {
     justify-content: center;
 }
 
-div.lineup > div.overview > span.member {
+div.lineup > div.overview > div.member {
     display: inline-block;
     padding: 5px;
 
@@ -26,15 +26,15 @@ div.lineup > div.overview > span.member {
     max-width: 300px;
 }
 
-div.lineup > div.overview > span.member > img.portrait {
+div.lineup > div.overview > div.member > img.portrait {
     border-radius: 5px;
     width: 100%;
 }
 
-div.lineup > div.overview > span.member > img.portrait:hover {
+div.lineup > div.overview > div.member > img.portrait:hover {
 }
 
-div.lineup > div.overview > span.member > div {
+div.lineup > div.overview > div.member > div {
     text-align: center;
     line-height: 1.5;
     padding: 1px;
@@ -52,20 +52,20 @@ div.lineup > div.overview > span.member > div {
     */
 }
 
-div.lineup > div.overview > span.member > div.name {
+div.lineup > div.overview > div.member > div.name {
     font-weight: bold;
     font-size: large;
 }
 
 
-div.lineup > div.overview > span.member > div.nickname {
+div.lineup > div.overview > div.member > div.nickname {
     font-style: italic;
 }
 
-div.lineup > div.overview > span.member > div.position {
+div.lineup > div.overview > div.member > div.position {
 }
 
-div.lineup > div.overview > span.member > div.projects {
+div.lineup > div.overview > div.member > div.projects {
     font-size: small;
     font-style: italic;
 }
@@ -73,7 +73,7 @@ div.lineup > div.overview > span.member > div.projects {
 /* shrink on smaller screen */
 @media screen and (max-width: 800px) {
 
-    div.lineup > div.overview > span.member {
+    div.lineup > div.overview > div.member {
         width: 40%;
         max-width: unset;
     }
@@ -82,7 +82,7 @@ div.lineup > div.overview > span.member > div.projects {
 
 @media screen and (max-width: 600px) {
 
-    div.lineup > div.overview > span.member {
+    div.lineup > div.overview > div.member {
         width: 50%;
         max-width: unset;
     }

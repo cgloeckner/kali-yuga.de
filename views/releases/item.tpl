@@ -1,5 +1,5 @@
         <div class="release">
-            <img class="preview" src="/content/cds/{{item['thumbnail']}}.jpg" />
+            <img class="preview" src="/content/cds/{{item['thumbnail']}}.jpg">
             <div class="column">
                 <div class="title">{{item['title']}}</div>
                 <div class="description">{{item['year']}} | {{item['type']}}

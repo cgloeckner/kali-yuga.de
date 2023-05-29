@@ -2,10 +2,10 @@
 
 <div class='impressum'>
 
-<br />
-<br />
-<br />
-<br />
+<br>
+<br>
+<br>
+<br>
 
 <h1>Impressum</h1>
 
@@ -14,17 +14,17 @@ Angaben gemäß § 5 TMG
 <h2 class="center">Kali Yuga</h2>
 
 <p class="center">
-    <b>Vertreten durch: </b><br />
-    Eik Halle<br />
-    tba<br />
-    07551 Gera <br />
-    <br />
-    <b>Kontakt:</b><br />
-    Telefon: tba<br />
-    E-Mail: <a href='mailto:{{email}}'>{{email}}</a><br />
+    <b>Vertreten durch: </b><br>
+    Eik Halle<br>
+    tba<br>
+    07551 Gera <br>
+    <br>
+    <b>Kontakt:</b><br>
+    Telefon: tba<br>
+    E-Mail: <a href='mailto:{{email}}'>{{email}}</a><br>
 </p>
 
-<hr />
+<hr>
 
 <h2>Haftungsausschluss:</h2>
 
@@ -63,10 +63,10 @@ entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir dera
 
 </div>
 
-<hr />
+<hr>
 
 <p>
-Dieses Impressum wurde auf Basis von <a href="https://www.impressum-generator.de">impressum-generator.de</a>  erstellt.
+Dieses Impressum wurde auf Basis von <a href="https://www.impressum-generator.de">impressum-generator.de</a> erstellt.
 </p>
 
 %include('footer')

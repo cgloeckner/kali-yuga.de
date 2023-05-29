@@ -27,4 +27,5 @@ div.feed > div.elements {
 
 div.feed > div.elements > iframe {
     padding: 10px;
+    border: 0px;
 }

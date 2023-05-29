@@ -1,6 +1,6 @@
 %include('header')
 
-<img class="title" src="/content/titles/gallery.jpg" />
+<img class="title" src="/content/titles/gallery.jpg">
 
 <div class="gallery">
 
@@ -10,7 +10,7 @@
 %for file in data:
     %include('gallery/thumbnail', file=file)
 %end
-    </container>
+    </div>
 
 </div>
 

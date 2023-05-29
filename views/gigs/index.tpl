@@ -1,6 +1,6 @@
 %include('header')
 
-<img class="title" src="/content/titles/gigs.jpg" />
+<img class="title" src="/content/titles/gigs.jpg">
 
 <div class="gigs">
 

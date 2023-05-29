@@ -1,10 +1,10 @@
 %include('header')
 
-<img class="title" src="/content/titles/feed.jpg" />
+<img class="title" src="/content/titles/feed.jpg">
 
 <div class="feed">
 
-    <img class="large-logo" src="/content/logo_inverted.png" />
+    <img class="large-logo" src="/content/logo_inverted.png">
 
     <div class="elements">
 %for key in data:

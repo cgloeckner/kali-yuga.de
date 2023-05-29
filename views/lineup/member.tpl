@@ -1,5 +1,5 @@
-    <span class="member">
-        <img class="portrait" src="/content/lineup/{{key}}.jpg" />
+    <div class="member">
+        <img class="portrait" src="/content/lineup/{{key}}.jpg">
         <div class="name">{{data['name']}}</div>
 %if 'nickname' in data:
         <div class="nickname">„{{data['nickname']}}“</div>
@@ -16,4 +16,4 @@
        %end
     </div>
 %end
-    </span>
+    </div>
