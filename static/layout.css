@@ -114,6 +114,30 @@ p.footer {
     font-size: x-small;
 }
 
+p.footer > a.scroll-up {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    right: 25px;
+    bottom: 3px;
+    padding: 5px;
+
+    font-size: 15pt;
+    background-color: var(--background-color-light);
+    border-radius: 5px;
+
+    transform: origin(50% 50%);
+}
+
+p.footer > a.scroll-up:hover {
+    text-decoration: unset;
+
+    transform: unset;
+
+    border: 1px solid var(--background-color-bright);
+    text-color: var(--background-color-bright);
+}
+
 @media screen and (max-width: 800px) {
 
     h1.shifted {

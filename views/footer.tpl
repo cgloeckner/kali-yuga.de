@@ -6,6 +6,7 @@
             <a href="/presskit">Press Kit</a> |
             <a href="/imprint" class="right">Imprint</a> |
             <a href="mailto:{{contact_email}}">{{contact_email}}</a>
+        <a class="scroll-up" href="#top" title="Scroll">^</a>
     </p>
 
 </body>
