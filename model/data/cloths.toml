@@ -1,13 +1,14 @@
-title="Kleidung"
-
-[random-shirt]
+[shirt1]
 title="T-Shirt"
+thumbnail="random-shirt"
 price=1500
 
-[girlie-xyz]
+[girlie1]
 title="Girlie-Shirt"
+thumbnail=""
 price=1200
 
-[example-hoodie]
+[hoodie1]
 title="Zipper"
+thumbnail="example-hoodie"
 price=-1

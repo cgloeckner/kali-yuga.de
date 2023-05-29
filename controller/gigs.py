@@ -10,7 +10,7 @@ class Gigs(BaseModule):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
-        self.data = list()
+        self.data = dict()
 
     @staticmethod
     def process_gigs(gigs: Dict[str, Dict]) -> Dict[int, List]:

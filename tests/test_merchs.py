@@ -1,6 +1,5 @@
 import unittest
 import pathlib
-import datetime
 
 import controller
 
@@ -9,6 +8,16 @@ class TestMerchModule(unittest.TestCase):
 
     def setUp(self) -> None:
         self.merch = controller.Merch(root=pathlib.Path('./'), email='foo@bar.com')
+
+    def test_MerchCategory_caption(self):
+        c = controller.MerchCategory.CDS
+        self.assertEqual(c.caption, 'CDs')
+
+        c = controller.MerchCategory.CLOTHS
+        self.assertEqual(c.caption, 'Kleidung')
+
+        c = controller.MerchCategory.MISC
+        self.assertEqual(c.caption, 'Sonstiges')
 
     def test_data_validation(self):
         # NOTE: loads from the files provided in this repository

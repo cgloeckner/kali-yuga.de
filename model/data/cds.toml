@@ -1,27 +1,29 @@
-title="CDs"
-
-[dead-shall-reign]
+[2009-ep]
 title="Dead Shall Reign"
+thumbnail="dead-shall-reign"
 year=2009
 type="EP"
 price=300
 
-[slaves-to-the-subliminal]
+[2011-album]
 title="Slaves to the Subliminal"
+thumbnail="slaves-to-the-subliminal"
 year=2011
 type="Album"
 price=1000
 spotify="https://open.spotify.com/intl-de/album/5xfbMFj9p0wxGNr1ZhxTow"
 
-[wrath-of-durga]
+[2012-album]
 title="Wrath of Durga"
+thumbnail="wrath-of-durga"
 year=2012
 type="Album"
 price=1000
 spotify="https://open.spotify.com/intl-de/album/3Jq3t4DCFyEJOqRCN8P6RB"
 
-[kali-yuga]
+[2015-album]
 title="Kali Yuga"
+thumbnail="kali-yuga"
 year=2015
 type="Album"
 price=1000

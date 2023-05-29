@@ -1,5 +1,5 @@
             <div class="item">
-                <img class="preview" src="/content/cloths/{{item}}.jpg" />
-                <span class="title">{{data['title']}}</span>
-%include('merch/price', price=data['price'])
+                <img class="preview" src="/content/cloths/{{item['thumbnail']}}.jpg" />
+                <span class="title">{{item['title']}}</span>
+%include('merch/price', price=item['price'])
             </div>

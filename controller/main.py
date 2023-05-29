@@ -50,8 +50,8 @@ def run():
 
     # load merchandise
     m = merch.Merch(root=s.local_root, email=get_email_address(Recipient.MERCH, args['domain']))
-    m.load_from_file(merch.MerchCategory.CDS)
-    m.load_from_file(merch.MerchCategory.CLOTHS)
+    for category in merch.MerchCategory:
+        m.load_from_file(category)
     m.render(contact_email=contact_email)
 
     if args['debug']:
