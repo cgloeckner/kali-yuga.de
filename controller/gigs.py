@@ -22,9 +22,9 @@ class Gigs(BaseModule):
             gigs_that_year = [gigs[key] for key in gigs if gigs[key]['date'].year == year]
             data[year] = gigs_that_year
 
-        # sort gigs with year
+        # sort gigs with date (starting with most recent)
         for year in data:
-            data[year].sort(key=lambda gig: gig['date'])
+            data[year].sort(key=lambda gig: gig['date'], reverse=True)
 
         return data
 

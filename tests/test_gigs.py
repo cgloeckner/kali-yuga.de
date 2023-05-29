@@ -40,9 +40,9 @@ class TestGigsModule(unittest.TestCase):
         self.assertEqual(len(grouped[2000]), 3)
         self.assertEqual(len(grouped[2002]), 1)
 
-        self.assertEqual(grouped[2000][0], raw['first-gig'])
+        self.assertEqual(grouped[2000][2], raw['first-gig'])
         self.assertEqual(grouped[2000][1], raw['second-gig'])
-        self.assertEqual(grouped[2000][2], raw['third-gig'])
+        self.assertEqual(grouped[2000][0], raw['third-gig'])
         self.assertEqual(grouped[2002][0], raw['last-gig'])
 
     def test_data_validation(self):
