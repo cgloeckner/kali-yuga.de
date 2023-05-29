@@ -7,6 +7,6 @@
                         </a>
 %end
                 </span>
-                <span class="details">{{item['year']}} | {{item['type']}}</span>
+                <span class="description">{{item['year']}} | {{item['type']}}</span>
 %include('merch/price', price=item['price'])
             </div>
