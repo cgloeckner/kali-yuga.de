@@ -1,0 +1,81 @@
+div.releases {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.releases > div.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.releases > div.container > div.release {
+    padding: 5px;
+    margin: 10px;
+    line-height: 1.0;
+
+    background-color: var(--background-color-light);
+
+    border-radius: 5px;
+    width: 600px;
+}
+
+div.releases > div.container > div.release {
+    display: flex;
+
+    border-radius: 5px;
+}
+
+div.releases > div.container > div.release > img.preview {
+    object-fit: contain;
+}
+
+div.releases > div.container > div.release > img.preview,
+div.releases > div.container > div.release > div.column {
+    width: 300px;
+    padding: 5px;
+}
+
+div.releases > div.container > div.release > div.column > div {
+    display: block;
+    text-align: center;
+    padding: 15px;
+}
+
+div.releases > div.container > div.release > div.column > div.title {
+    font-weight: bold;
+}
+
+div.releases > div.container > div.release > div.column > div.tracklist {
+    text-align: left;
+    font-size: small;
+    line-height: 1.25;
+}
+
+a.listen > img {
+    display: inline;
+    width: 14px;
+}
+
+
+/* shrink on smaller screen */
+@media screen and (max-width: 600px) {
+
+    div.releases > div.container > div.release {
+        width: 90vw;
+    }
+
+    div.releases > div.container > div.release {
+        display: block;
+        width: 350px;
+    }
+
+    div.releases > div.container > div.release > div.column {
+    }
+
+}

@@ -57,11 +57,6 @@ div.merch > div.grouping > div.container > div.item > span.title {
     padding: 15px;
 }
 
-div.merch > div.grouping > div.container > div.item > span.title > a.listen > img {
-    display: inline;
-    width: 14px;
-}
-
 div.merch > div.grouping > div.container > div.item > span.description {
     display: block;
     font-style: italic;

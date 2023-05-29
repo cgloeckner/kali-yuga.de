@@ -4,6 +4,7 @@ thumbnail="dead-shall-reign"
 year=2009
 type="EP"
 price=300
+tracks=["Dead Shall Reign", "Deadline", "In Blood We Trust"]
 
 [2011-album]
 title="Slaves to the Subliminal"
@@ -11,7 +12,8 @@ thumbnail="slaves-to-the-subliminal"
 year=2011
 type="Album"
 price=1000
-spotify="https://open.spotify.com/intl-de/album/5xfbMFj9p0wxGNr1ZhxTow"
+listen={"spotify" = "5xfbMFj9p0wxGNr1ZhxTow"}
+tracks=["Bullethead", "Deadline", "Abyss of Life", "Epidemic Fear", "Fields of War", "In Blood We Trust", "Suicide", "Dead Shall Reign", "Sanctimonious", "Slaves To The Subliminal"]
 
 [2012-album]
 title="Wrath of Durga"
@@ -19,7 +21,8 @@ thumbnail="wrath-of-durga"
 year=2012
 type="Album"
 price=1000
-spotify="https://open.spotify.com/intl-de/album/3Jq3t4DCFyEJOqRCN8P6RB"
+listen={"spotify" = "3Jq3t4DCFyEJOqRCN8P6RB"}
+tracks=["Dawn (Intro)", "Desecration", "Oblivion", "Odium", "Scene Of A Murderer", "Suffocating", "The Agony", "The Black Wall", "Wrath of Durga", "As We Speak"]
 
 [2015-album]
 title="Kali Yuga"
@@ -27,4 +30,5 @@ thumbnail="kali-yuga"
 year=2015
 type="Album"
 price=1000
-spotify="https://open.spotify.com/intl-de/album/3zYG04z6RWu2KwvOk13tY2"
+listen={"spotify" = "3zYG04z6RWu2KwvOk13tY2"}
+tracks=["God's Gift", "Obsession", "The Gray Man", "Evolution of Schizophrenia", "Atrocity", "Immortal Fire", "Sacrifice", "Inside Agony", "Unearthed", "Designed For Devastation"]

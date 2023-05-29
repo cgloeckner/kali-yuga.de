@@ -34,6 +34,9 @@ class Merch(BaseModule):
     def process_merch(merch: Dict[str, Dict]) -> List[dict]:
         return [merch[key] for key in merch]
 
+    def get_cds(self) -> List[dict]:
+        return self.data[MerchCategory.CDS]
+
     def load_from_file(self, category: MerchCategory) -> None:
         filename = f'{self.root}/model/data/{category.value}.toml'
         with open(filename, 'rb') as file:

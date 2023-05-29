@@ -17,6 +17,8 @@ div.navigation {
     background-color: transparent;
 
     position: fixed;
+
+    z-index: 20;
 }
 
 div.navigation > div.icon {
@@ -34,18 +36,12 @@ div.navigation > div.title {
     display: none;
 }
 
-div.navigation > div.icon:hover {
-    background-color: var(--background-color-bright);
-}
-
 div.navigation > div.elements {
     text-align: center;
     float: right;
 
     border-radius: 10px;
     z-index: 2;
-
-    background-color: var(--background-color);
 }
 
 div.navigation > div.icon:hover ~ div.elements,
@@ -63,6 +59,9 @@ div.navigation > div.elements > a {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    font-size: small;
+
+    text-shadow: 0px 0px 5px black;
 }
 
 div.navigation > div.elements > a.right {
@@ -70,15 +69,15 @@ div.navigation > div.elements > a.right {
 }
 
 div.navigation > div.elements > a:hover {
-    background-color: var(--background-color-bright);
+    text-shadow: 0px 0px 25px var(--text-blur-color);
 }
 
 /* show as burger menu on small screen */
-@media screen and ((max-width: 500px) or (max-height: 300px)) {
+@media screen and (max-width: 800px) {
 
     div.navigation {
         width: 100%;
-        background-color: var(--background-color-light);
+        background-color: transparent;
     }
 
     div.navigation > div.icon {

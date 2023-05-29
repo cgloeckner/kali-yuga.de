@@ -1,6 +1,6 @@
 import bottle
 
-from . import server, feed, lineup, gigs, gallery, merch
+from . import server, feed, releases, lineup, gigs, gallery, merch
 
 
 from enum import auto
@@ -59,6 +59,11 @@ def run():
         m.load_from_file(category)
     m.render(contact_email=contact_email)
 
+    # load releases
+    r = releases.Releases(root=s.local_root, email=contact_email)
+    r.load_from_merch(m)
+    r.render(contact_email=contact_email)
+
     if args['debug']:
         @s.app.get('/static/<filename>')
         def static_files(filename: str):
@@ -74,11 +79,15 @@ def run():
     def feed_page():
         return f.template
 
-    @s.app.get('/lineup-infos')
+    @s.app.get('/releases')
+    def releases_page():
+        return r.template
+
+    @s.app.get('/lineup')
     def lineup_page():
         return l.template
 
-    @s.app.get('/live-shows')
+    @s.app.get('/shows')
     def gigs_page():
         return g.template
 
