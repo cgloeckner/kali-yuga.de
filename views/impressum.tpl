@@ -61,12 +61,12 @@ gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam
 entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
 </p>
 
-</div>
-
 <hr>
 
 <p>
 Dieses Impressum wurde auf Basis von <a href="https://www.impressum-generator.de">impressum-generator.de</a> erstellt.
 </p>
+
+</div>
 
 %include('footer')
