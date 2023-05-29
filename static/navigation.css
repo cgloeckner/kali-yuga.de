@@ -6,15 +6,15 @@ img.navi-logo {
     display: inline-block;
     vertical-align: sub;
 
-    position: absolute;
-    z-index: 10;
+    position: fixed;
+    z-index: 21;
 }
 
 div.navigation {
     width: 100%;
-    height: 55px;
+    height: 45px;
     display: inline-block;
-    background-color: transparent;
+    background-color: var(--background-color-light);
 
     position: fixed;
 
@@ -23,6 +23,9 @@ div.navigation {
 
 div.navigation > div.icon {
     display: none;
+
+    background-color: var(--background-color-light);
+    border-radius: 5px;
 
     font-size: 30pt;
     width: 48px;
@@ -91,7 +94,7 @@ div.navigation > div.elements > a:hover {
 
     div.navigation > div.elements {
         display: none;
-        background-color: var(--background-color-light);
+        background-color: var(--background-color-bright);
         width: 150px;
 
         z-index: 2;

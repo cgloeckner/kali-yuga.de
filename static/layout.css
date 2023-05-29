@@ -69,6 +69,10 @@ img.title {
     z-index: -1;
 }
 
+img.blurred {
+    filter: blur(3px);
+}
+
 img.icon {
     width: 24px;
 }

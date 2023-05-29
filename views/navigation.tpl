@@ -1,4 +1,5 @@
     <a href="/">
+        <img class="navi-logo blurred" src="/content/logo_inverted.png" />
         <img class="navi-logo" src="/content/logo_inverted.png" />
     </a>
 
