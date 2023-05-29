@@ -12,6 +12,6 @@
             <a class="hoverable" href="/lineup">Lineup</a>
             <a class="hoverable" href="/shows">Shows</a>
             <a class="hoverable" href="/gallery">Gallery</a>
-            <a class="hoverable" href="/merchandise">Merch</a>
+            <a class="hoverable" href="/merch">Merch</a>
         </div>
     </div>

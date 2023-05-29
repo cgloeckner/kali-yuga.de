@@ -1,10 +1,10 @@
+import pathlib
 import bottle
-
-from . import server, feed, releases, lineup, gigs, gallery, merch
-
 
 from enum import auto
 from strenum import LowercaseStrEnum
+
+from . import server, feed, releases, lineup, gigs, gallery, merch, presskit
 
 
 class Recipient(LowercaseStrEnum):
@@ -24,7 +24,7 @@ def run():
         'domain': 'kali-yuga.de',
         'port': 8001,
         'debug': True,
-        'reloader': True,
+        'reloader': False,
         'quiet': False,
         'server': 'gevent'
     }
@@ -64,6 +64,10 @@ def run():
     r.load_from_merch(m)
     r.render(contact_email=contact_email)
 
+    # load presskit
+    p = presskit.Presskit(root=s.local_root)
+    p.build()
+
     if args['debug']:
         @s.app.get('/static/<filename>')
         def static_files(filename: str):
@@ -95,7 +99,7 @@ def run():
     def gallery_page():
         return gal.template
 
-    @s.app.get('/merchandise')
+    @s.app.get('/merch')
     def merch_page():
         return m.template
 
@@ -103,5 +107,10 @@ def run():
     @bottle.view('impressum')
     def impressum_page():
         return dict(email=contact_email, contact_email=contact_email)
+
+    @s.app.get('/presskit')
+    def static_presskit():
+        path = pathlib.Path(p.zip_file.name)
+        return bottle.static_file(path.name, root=path.parent, download='Kali Yuga EPK', mimetype='application/zip')
 
     s.run()
