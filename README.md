@@ -1,8 +1,8 @@
-![Python application](https://github.com/cgloeckner/band-homepage/actions/workflows/python-app.yml/badge.svg?branch=main)
+![Python application](https://github.com/cgloeckner/kali-yuga.de/actions/workflows/python-app.yml/badge.svg?branch=main)
 
-# band-homepage
+# kali-yuga.de
 
-This drives the band homepage of Kali Yuga at www.kali-yuga.de (WIP).
+This code drives the band homepage of Kali Yuga at www.kali-yuga.de (WIP).
 
 The content's copyright is to Kali Yuga.
 
