@@ -8,11 +8,7 @@
 
     <div class="container">
 %for file in data:
-        <div class="thumbnail">
-            <a href="/content/gallery/{{file}}" target="_blank">
-                <img src="/content/gallery/{{file}}" />
-            </a>
-        </div>
+    %include('gallery/thumbnail', file=file)
 %end
     </container>
 
