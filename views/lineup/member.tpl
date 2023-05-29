@@ -9,6 +9,11 @@
     %pos += f', seit {data["since"]}'
 %end
         <div class="position">({{pos}})</div>
-%tasks = ', '.join(data['tasks'])
-        <div class="tasks">{{tasks}}</div>
+%if 'projects' in data:
+    <div class="projects">auch:
+    %for name in data['projects']:
+        %include('lineup/project', name=name, url=data['projects'][name])
+       %end
+    </div>
+%end
     </span>

@@ -2,29 +2,27 @@
 name="Michael Albert"
 nickname="Michbär"
 position="Gitarre"
-tasks=["Booking"]
+projects={"Radiation Dust" = "https://www.facebook.com/fallofserenity"}
 since=2009
 
 [christian]
 name="Christian Glöckner"
 nickname="glocke"
 position="Gesang"
-tasks=["In-Ear-Monitoring", "Homepage"]
 since=2018
 
 [eik]
 name="Eik Halle"
 position="Gitarre"
-tasks=["Booking"]
+projects={"Fall of Serenity" = "https://www.facebook.com/fallofserenity"}
 
 [jan]
 name="Jan Koch"
 nickname="Kocher"
 position="Bass"
-tasks=["Public Relations"]
 
 [jean]
 name="Jean-Peer Krutz"
 position="Schlagzeug"
 since=2012
-tasks=["Mechandise"]
+projects={"Artless" = "https://www.facebook.com/artless"}

@@ -37,6 +37,7 @@ div.lineup > div.overview > span.member > img.portrait:hover {
 div.lineup > div.overview > span.member > div {
     text-align: center;
     line-height: 1.5;
+    padding: 1px;
 
     /* move up and release spacing below */
     /*
@@ -64,7 +65,7 @@ div.lineup > div.overview > span.member > div.nickname {
 div.lineup > div.overview > span.member > div.position {
 }
 
-div.lineup > div.overview > span.member > div.tasks {
+div.lineup > div.overview > span.member > div.projects {
     font-size: small;
     font-style: italic;
 }
