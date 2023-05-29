@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/static/feed.css">
     <link rel="stylesheet" type="text/css" href="/static/lineup.css">
     <link rel="stylesheet" type="text/css" href="/static/gigs.css">
+    <link rel="stylesheet" type="text/css" href="/static/gallery.css">
     <link rel="stylesheet" type="text/css" href="/static/merch.css">
     <link rel="stylesheet" type="text/css" href="/static/impressum.css">
     <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>

@@ -1,0 +1,48 @@
+div.gallery {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.gallery > div.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.gallery > div.container > div.thumbnail {
+    display: inline-block;
+    padding: 10px;
+
+    height: 25vw;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+div.gallery > div.container > div.thumbnail > a > img {
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    transition: transform .5s ease;
+}
+
+div.gallery > div.container > div.thumbnail > a > img:hover {
+    cursor: pointer;
+
+    transform: scale(1.2);
+}
+
+/* shrink on smaller screen */
+@media screen and (max-width: 600px) {
+
+    div.gallery > div.container > div.thumbnail {
+        width: 50%;
+        max-width: unset;
+        height: 50%;
+        max-height: unset;
+    }
+}
