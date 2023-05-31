@@ -13,7 +13,8 @@ def run(port: int, reverse_proxy: bool):
         'debug': not reverse_proxy,
         'reloader': False,
         'quiet': reverse_proxy,
-        'server': 'gevent'
+        'server': 'gevent',
+        'reverse_proxy': reverse_proxy
     }
 
     s = server.WebServer(args)

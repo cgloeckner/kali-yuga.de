@@ -16,4 +16,5 @@ class Releases(BaseModule):
         self.data = merch.get_cds()
 
     def render(self) -> None:
-        self.template = bottle.template('releases/index', data=self.data, contact_email=self.server.get_contact_email())
+        self.template = bottle.template('releases/index', data=self.data, contact_email=self.server.get_contact_email(),
+                                        get_static_url=self.server.get_static_url)

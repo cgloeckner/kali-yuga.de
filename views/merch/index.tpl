@@ -1,4 +1,4 @@
-%include('header')
+%include('header', get_static_url=get_static_url)
 
 <img class="title" src="/content/titles/merch.jpg">
 

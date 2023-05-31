@@ -44,6 +44,13 @@ class WebServer(ServerApi):
     def get_local_root(self) -> pathlib.Path:
         return self.local_root
 
+    def get_static_url(self, relative_url: str) -> str:
+        if self.args['reverse_proxy']:
+            domain = self.args['domain']
+            return f'http://static.{domain}{relative_url}'
+
+        return f'/static{relative_url}'
+
     def run(self) -> None:
         bottle.run(
             host=self.args['host'],

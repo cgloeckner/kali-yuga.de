@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . /app
 
-CMD [ "python", "main.py", "-p", "80" ]
+CMD [ "python", "main.py", "-p", "80", "--reverse-proxy" ]

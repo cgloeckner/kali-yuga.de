@@ -32,4 +32,5 @@ class Gallery(BaseModule):
         self.data = [file.name for pattern in patterns for file in pattern]
 
     def render(self) -> None:
-        self.template = bottle.template('gallery/index', data=self.data, contact_email=self.server.get_contact_email())
+        self.template = bottle.template('gallery/index', data=self.data, contact_email=self.server.get_contact_email(),
+                                        get_static_url=self.server.get_static_url)

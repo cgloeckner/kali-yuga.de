@@ -16,4 +16,5 @@ class Feed(BaseModule):
             self.data = tomli.load(file)
 
     def render(self) -> None:
-        self.template = bottle.template('feed/index', data=self.data, contact_email=self.server.get_contact_email())
+        self.template = bottle.template('feed/index', data=self.data, contact_email=self.server.get_contact_email(),
+                                        get_static_url=self.server.get_static_url)

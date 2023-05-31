@@ -37,4 +37,5 @@ class Gigs(BaseModule):
 
     def render(self) -> None:
         self.template = bottle.template('gigs/index', data=self.data, booking_email=self.server.get_booking_email(),
-                                        contact_email=self.server.get_contact_email())
+                                        contact_email=self.server.get_contact_email(),
+                                        get_static_url=self.server.get_static_url)
