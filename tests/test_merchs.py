@@ -3,11 +3,14 @@ import pathlib
 
 import controller
 
+from .ServerMock import ServerMock
+
 
 class TestMerchModule(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.merch = controller.Merch(root=pathlib.Path('./'), email='foo@bar.com')
+        self.server = ServerMock()
+        self.merch = controller.Merch(self.server)
 
     def test_MerchCategory_caption(self):
         c = controller.MerchCategory.CDS
@@ -26,5 +29,5 @@ class TestMerchModule(unittest.TestCase):
             enum_value = controller.MerchCategory(value_str)
             self.merch.load_from_file(enum_value)
 
-        self.merch.render(contact_email=self.merch.email)
+        self.merch.render()
         self.assertIsNotNone(self.merch.template)

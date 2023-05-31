@@ -4,11 +4,14 @@ import datetime
 
 import controller
 
+from .ServerMock import ServerMock
+
 
 class TestGigsModule(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.gigs = controller.Gigs(root=pathlib.Path('./'), email='foo@bar.com')
+        self.server = ServerMock()
+        self.gigs = controller.Gigs(self.server)
 
     def test_process_gigs(self):
         raw = {
@@ -49,6 +52,6 @@ class TestGigsModule(unittest.TestCase):
         # NOTE: loads from the files provided in this repository
         # hence this is kind of a data validation test
         self.gigs.load_from_file()
-        self.gigs.render(contact_email=self.gigs.email)
+        self.gigs.render()
 
         self.assertIsNotNone(self.gigs.template)

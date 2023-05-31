@@ -3,12 +3,12 @@ import bottle
 
 from typing import Dict, List
 
-from .modules import BaseModule
+from .modules import BaseModule, ServerApi
 
 
 class Gigs(BaseModule):
-    def __init__(self, **kwargs) -> None:
-        super().__init__(**kwargs)
+    def __init__(self, api: ServerApi) -> None:
+        super().__init__(api)
 
         self.data = dict()
 
@@ -29,11 +29,12 @@ class Gigs(BaseModule):
         return data
 
     def load_from_file(self) -> None:
-        filename = f'{self.root}/model/data/gigs.toml'
+        filename = f'{self.server.get_local_root()}/model/data/gigs.toml'
         with open(filename, 'rb') as file:
             gigs = tomli.load(file)
 
         self.data = self.process_gigs(gigs)
 
-    def render(self, contact_email: str) -> None:
-        self.template = bottle.template('gigs/index', data=self.data, email=self.email, contact_email=contact_email)
+    def render(self) -> None:
+        self.template = bottle.template('gigs/index', data=self.data, booking_email=self.server.get_booking_email(),
+                                        contact_email=self.server.get_contact_email())

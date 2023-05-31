@@ -11,6 +11,6 @@ if test -f "$FILE"; then
 fi
 
 # start new instance
-DOCKER_ID=`docker run -d --restart always -p 8002:80 kali-page:latest`
+DOCKER_ID=`docker run -d --restart always -p 8001:80 kali-page:latest`
 echo "Started docker $DOCKER_ID"
 echo $DOCKER_ID > $FILE

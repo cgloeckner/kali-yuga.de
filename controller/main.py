@@ -2,74 +2,58 @@ import pathlib
 
 import bottle
 
-from enum import auto
-from strenum import LowercaseStrEnum
-
 from . import server, feed, releases, lineup, gigs, gallery, merch, presskit
 
 
-class Recipient(LowercaseStrEnum):
-    CONTACT = auto()
-    BOOKING = auto()
-    MERCH = auto()
-    WEBMASTER = auto()
-
-
-def get_email_address(recipient: Recipient, domain: str) -> str:
-    return f'{recipient.value}@{domain}'
-
-
-def run(port: int):
+def run(port: int, reverse_proxy: bool):
     args = {
         'host': '0.0.0.0',
         'domain': 'kali-yuga.de',
         'port': port,
-        'debug': True,
+        'debug': not reverse_proxy,
         'reloader': False,
-        'quiet': False,
+        'quiet': reverse_proxy,
         'server': 'gevent'
     }
 
     s = server.WebServer(args)
 
-    contact_email = get_email_address(Recipient.CONTACT, args['domain'])
-
     # load feed
-    f = feed.Feed(root=s.local_root, email=contact_email)
+    f = feed.Feed(api=s)
     f.load_from_file()
-    f.render(contact_email=contact_email)
+    f.render()
 
     # load lineup
-    l = lineup.Lineup(root=s.local_root, email=contact_email)
+    l = lineup.Lineup(api=s)
     l.load_from_file()
-    l.render(contact_email=contact_email)
+    l.render()
 
     # load live shows
-    g = gigs.Gigs(root=s.local_root, email=get_email_address(Recipient.BOOKING, args['domain']))
+    g = gigs.Gigs(api=s)
     g.load_from_file()
-    g.render(contact_email=contact_email)
+    g.render()
 
     # load gallery
-    gal = gallery.Gallery(root=s.local_root, email=contact_email)
+    gal = gallery.Gallery(api=s)
     gal.load_from_disc()
-    gal.render(contact_email=contact_email)
+    gal.render()
 
     # load merchandise
-    m = merch.Merch(root=s.local_root, email=get_email_address(Recipient.MERCH, args['domain']))
-    for category in merch.MerchCategory:
-        m.load_from_file(category)
-    m.render(contact_email=contact_email)
+    m = merch.Merch(api=s)
+    for category_str in merch.MerchCategory:
+        m.load_from_file(merch.MerchCategory(category_str))
+    m.render()
 
     # load releases
-    r = releases.Releases(root=s.local_root, email=contact_email)
+    r = releases.Releases(api=s)
     r.load_from_merch(m)
-    r.render(contact_email=contact_email)
+    r.render()
 
     # load presskit
-    p = presskit.Presskit(root=s.local_root)
+    p = presskit.Presskit(api=s)
     p.build()
 
-    if args['debug']:
+    if not reverse_proxy:
         @s.app.get('/static/<filename>')
         def static_files(filename: str):
             root = s.get_statics_path()
@@ -107,7 +91,7 @@ def run(port: int):
     @s.app.get('/imprint')
     @bottle.view('impressum')
     def impressum_page():
-        return dict(email=contact_email, contact_email=contact_email)
+        return dict(contact_email=s.get_contact_email())
 
     @s.app.get('/presskit')
     def static_presskit():

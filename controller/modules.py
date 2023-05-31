@@ -3,11 +3,24 @@ import pathlib
 from abc import abstractmethod, ABC
 
 
+class ServerApi(ABC):
+    @abstractmethod
+    def get_contact_email(self) -> str: ...
+
+    @abstractmethod
+    def get_merch_email(self) -> str: ...
+
+    @abstractmethod
+    def get_booking_email(self) -> str: ...
+
+    @abstractmethod
+    def get_local_root(self) -> pathlib.Path: ...
+
+
 class BaseModule(ABC):
-    def __init__(self, root: pathlib.Path, email: str) -> None:
-        self.root = root
-        self.email = email
+    def __init__(self, server: ServerApi) -> None:
+        self.server = server
         self.template = None
 
     @abstractmethod
-    def render(self, contact_email: str) -> None: ...
+    def render(self) -> None: ...

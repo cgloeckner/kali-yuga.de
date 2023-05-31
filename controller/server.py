@@ -1,13 +1,29 @@
 import pathlib
 import requests
 
+from typing import Dict
+
 from gevent import monkey; monkey.patch_all()
 import bottle
 
-from typing import Dict
+from enum import auto
+from strenum import LowercaseStrEnum
+
+from .modules import ServerApi
 
 
-class WebServer:
+class Recipient(LowercaseStrEnum):
+    CONTACT = auto()
+    BOOKING = auto()
+    MERCH = auto()
+    WEBMASTER = auto()
+
+
+def get_email_address(recipient: Recipient, domain: str) -> str:
+    return f'{recipient.value}@{domain}'
+
+
+class WebServer(ServerApi):
 
     def __init__(self, args: Dict) -> None:
         self.local_root = pathlib.Path('./')
@@ -15,6 +31,18 @@ class WebServer:
 
         self.app = bottle.default_app()
         self.app.catchall = self.args['debug']
+
+    def get_contact_email(self) -> str:
+        return get_email_address(Recipient.CONTACT, self.args['domain'])
+
+    def get_merch_email(self) -> str:
+        return get_email_address(Recipient.MERCH, self.args['domain'])
+
+    def get_booking_email(self) -> str:
+        return get_email_address(Recipient.BOOKING, self.args['domain'])
+
+    def get_local_root(self) -> pathlib.Path:
+        return self.local_root
 
     def run(self) -> None:
         bottle.run(

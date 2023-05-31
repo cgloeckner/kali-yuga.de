@@ -15,9 +15,10 @@ Angaben gemäß § 5 TMG
 
 <p class="center">
     <b>Vertreten durch: </b><br>
-    Eik Halle<br>
-    tba<br>
-    07551 Gera <br>
+    Jan Koch<br />
+    c/o Rechtsanwälte Diehl & Pape<br />
+    Innere Plauensche Straße 20<br />
+    08056 Zwickau<br />
     <br>
     <b>Kontakt:</b><br>
     Telefon: tba<br>

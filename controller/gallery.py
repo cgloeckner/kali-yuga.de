@@ -2,12 +2,12 @@ import bottle
 
 from typing import List
 
-from .modules import BaseModule
+from .modules import BaseModule, ServerApi
 
 
 class Gallery(BaseModule):
-    def __init__(self, **kwargs) -> None:
-        super().__init__(**kwargs)
+    def __init__(self, api: ServerApi) -> None:
+        super().__init__(api)
 
         self.data = list()
 
@@ -26,10 +26,10 @@ class Gallery(BaseModule):
 
     def load_from_disc(self) -> None:
         extensions = Gallery.get_extension_wildcards()
-        root = self.root / 'model' / 'content' / 'gallery'
+        root = self.server.get_local_root() / 'model' / 'content' / 'gallery'
 
         patterns = [root.glob(ext) for ext in extensions]
         self.data = [file.name for pattern in patterns for file in pattern]
 
-    def render(self, contact_email: str) -> None:
-        self.template = bottle.template('gallery/index', data=self.data, contact_email=contact_email)
+    def render(self) -> None:
+        self.template = bottle.template('gallery/index', data=self.data, contact_email=self.server.get_contact_email())
