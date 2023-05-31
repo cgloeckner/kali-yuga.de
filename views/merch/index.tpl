@@ -1,6 +1,6 @@
 %include('header', get_static_url=get_static_url)
 
-<img class="title" src="/content/titles/merch.jpg">
+<img class="title" src="{{get_static_url('/content/titles/merch.jpg')}}">
 
 <div class="merch">
 

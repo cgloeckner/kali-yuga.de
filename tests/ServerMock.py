@@ -18,3 +18,6 @@ class ServerMock(ServerApi):
 
     def get_local_root(self) -> pathlib.Path:
         return self.root
+
+    def get_static_url(self, relative_url: str) -> str:
+        return f'/static{relative_url}'

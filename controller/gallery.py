@@ -26,7 +26,7 @@ class Gallery(BaseModule):
 
     def load_from_disc(self) -> None:
         extensions = Gallery.get_extension_wildcards()
-        root = self.server.get_local_root() / 'model' / 'content' / 'gallery'
+        root = self.server.get_local_root() / 'static' / 'content' / 'gallery'
 
         patterns = [root.glob(ext) for ext in extensions]
         self.data = [file.name for pattern in patterns for file in pattern]

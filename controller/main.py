@@ -55,14 +55,9 @@ def run(port: int, reverse_proxy: bool):
     p.build()
 
     if not reverse_proxy:
-        @s.app.get('/static/<filename>')
-        def static_files(filename: str):
+        @s.app.get('/static/<path:path>')
+        def static_files(path: str):
             root = s.get_statics_path()
-            return bottle.static_file(filename, root=root)
-
-        @s.app.get('/content/<path:path>')
-        def static_content(path: str):
-            root = s.local_root / 'model' / 'content'
             return bottle.static_file(path, root=root)
 
     @s.app.get('/')
