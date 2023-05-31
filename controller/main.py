@@ -87,7 +87,7 @@ def run(port: int, reverse_proxy: bool):
     @s.app.get('/imprint')
     @bottle.view('impressum')
     def impressum_page():
-        return dict(contact_email=s.get_contact_email())
+        return dict(contact_email=s.get_contact_email(), get_static_url=s.get_static_url)
 
     @s.app.get('/presskit')
     def static_presskit():

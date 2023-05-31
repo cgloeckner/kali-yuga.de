@@ -6,21 +6,11 @@ from typing import Dict
 from gevent import monkey; monkey.patch_all()
 import bottle
 
-from enum import auto
-from strenum import LowercaseStrEnum
-
 from .modules import ServerApi
 
 
-class Recipient(LowercaseStrEnum):
-    CONTACT = auto()
-    BOOKING = auto()
-    MERCH = auto()
-    WEBMASTER = auto()
-
-
-def get_email_address(recipient: Recipient, domain: str) -> str:
-    return f'{recipient.value}@{domain}'
+def get_email_address(recipient: str, domain: str) -> str:
+    return f'{recipient}@{domain}'
 
 
 class WebServer(ServerApi):
@@ -33,13 +23,13 @@ class WebServer(ServerApi):
         self.app.catchall = self.args['debug']
 
     def get_contact_email(self) -> str:
-        return get_email_address(Recipient.CONTACT, self.args['domain'])
+        return get_email_address('kontakt', self.args['domain'])
 
     def get_merch_email(self) -> str:
-        return get_email_address(Recipient.MERCH, self.args['domain'])
+        return get_email_address('merch', self.args['domain'])
 
     def get_booking_email(self) -> str:
-        return get_email_address(Recipient.BOOKING, self.args['domain'])
+        return get_email_address('booking', self.args['domain'])
 
     def get_local_root(self) -> pathlib.Path:
         return self.local_root

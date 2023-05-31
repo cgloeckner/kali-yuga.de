@@ -22,7 +22,7 @@ Angaben gemäß § 5 TMG
     <br>
     <b>Kontakt:</b><br>
     Telefon: tba<br>
-    E-Mail: <a href='mailto:{{email}}'>{{email}}</a><br>
+    E-Mail: <a href='mailto:{{contact_email}}'>{{contact_email}}</a><br>
 </p>
 
 <hr>
