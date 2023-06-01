@@ -1,4 +1,4 @@
-from .main import run
+from .main import run, build
 
 from .feed import Feed
 from .releases import Releases

@@ -17,7 +17,11 @@ def main():
         print('Usage: -p <portnumber>')
         return
 
-    controller.run(port, reverse_proxy)
+    if '--render' in sys.argv:
+        controller.build('kali-yuga.de')
+        return
+
+    controller.run('kali-yuga.de', port, reverse_proxy)
 
 
 if __name__ == '__main__':

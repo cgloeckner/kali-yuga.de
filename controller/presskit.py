@@ -1,4 +1,3 @@
-import tempfile
 import zipfile
 
 from .modules import ServerApi
@@ -8,10 +7,7 @@ class Presskit:
     def __init__(self, api: ServerApi) -> None:
         self.server = api
         self.root = api.get_local_root() / 'model' / 'presskit'
-        self.zip_file = tempfile.NamedTemporaryFile()
-
-    def __del__(self):
-        self.zip_file.close()
+        self.zip_file = api.get_local_root() / 'static' / 'presskit.zip'
 
     def build(self) -> None:
         """Zips all files and folders."""
