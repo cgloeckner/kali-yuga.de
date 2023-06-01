@@ -1,7 +1,7 @@
 <!-- Copyright (c) 2023 Kali Yuga //-->
 
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" style="background-image: url('{{get_static_url('/content/background.jpg')}}');">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

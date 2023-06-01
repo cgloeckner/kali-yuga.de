@@ -21,7 +21,7 @@ Angaben gemäß § 5 TMG
     08056 Zwickau<br />
     <br>
     <b>Kontakt:</b><br>
-    Telefon: tba<br>
+    Telefon: 0365-2041114<br>
     E-Mail: <a href='mailto:{{contact_email}}'>{{contact_email}}</a><br>
 </p>
 

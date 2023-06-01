@@ -13,7 +13,6 @@ html {
     background-color: var(--background-color);
     color: var(--text-color);
 
-    background-image: url('/content/background.jpg');
     background-size: 75%;
     background-repeat: repeat;
 }
