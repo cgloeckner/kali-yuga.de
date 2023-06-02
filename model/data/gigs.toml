@@ -3,32 +3,404 @@ title="Breakout Festival"
 location="Freibad Leubnitz, Werdau"
 date=2022-10-22
 
-[to-hell-and-back-18]
-title="To Hell and Back"
-location="Dreschhalle, Wernfeld"
-date=2018-09-22
-
 [graveyard-22]
 title="Graveyard Summer Fest 2022"
 location="Comma, Gera"
 date=2022-07-02
 
-[upcoming-dummy]
-title="Platzhalter"
-location="irgendwo"
-date=2024-06-01
+[mittsommer-baerenstein-22]
+title="Mittsommernächte Bärenstein 2022"
+location="Sportplatz Bärenstein"
+date=2022-06-24
 
-[upcoming-dummy2]
-title="Platzhalter2"
-location="irgendwo anders"
-date=2024-06-05
+[ringkeller-22]
+title="Rockcafe Ringkeller"
+location="Rockcafe Ringkeller, Zwickau"
+date=2022-01-25
 
-[upcoming-dummy3]
-title="dritter Platzhalter"
-location="nirgendwo"
-date=2024-06-13
 
-[upcoming-dummy4]
-title="TBA"
-location="WIP"
-date=2024-06-20
+# ---------------------------------------------------------------------------------------------------------------------
+
+[rawww-19]
+title="Rock am Wehr Winter Wehr 3"
+location="Kassablanca, Gleis 1, Jena"
+date=2019-03-09
+
+[debauchery-19]
+title="Debauchery vs Balgeroth"
+location="Comma Gera"
+date=2019-02-09
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[to-hell-and-back-18]
+title="To Hell and Back"
+location="Dreschhalle, Wernfeld"
+date=2018-09-22
+
+[wenns-nicht-rockt-18]
+title="Wenns nicht rock isses vorn Arsch"
+location="ein Acker bei Jena"
+date=2018-06-17
+
+[jena-dead-days]
+title="Dead Days"
+location="Kulturbahnhof Jena"
+date=2018-03-17
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[culture-shock-16]
+title="Culture Shock Festival III"
+location="Culture Shock, Jena"
+date=2016-09-15
+
+[f-haus-19]
+title="F-Haus"
+location="F-Haus, Jena"
+date=2016-09-03
+
+[protzen-16]
+title="Protzen O.A."
+location="Protzen"
+date=2016-06-24
+
+[cmoa-16]
+title="Chronical Moshers O.A."
+location="Mühlteich, Hauptmannsgrün"
+date=2016-06-11
+
+[winterfestevil-16]
+title="WinterfestEVIL"
+location="Bandhaus Leipzig"
+date=2016-02-06
+
+[alte-brauerei-16]
+title="AGleis 3"
+location="Alte Brauerei, Annaberg-Buchholz"
+date=2016-01-10
+
+[falling-meat-16]
+title="Falling Meat"
+location="Centrum Club, Erfurt"
+date=2016-01-08
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[K17-15]
+title="K17"
+location="Nuke Club, Berlin"
+date=2015-12-28
+
+[seilerstr-15]
+title="Post Apocalypse Now"
+location="Club Seilerstraße, Zwickau"
+date=2015-12-19
+
+[xmas-in-hell-15]
+title="Xas In Hell Festival"
+location="Alte Spinnerei Glauchau"
+date=2015-12-12
+
+[metal-crossfire-iv]
+title="Metal Crossfire IV"
+location="Sportplatz Auerbach"
+date=2015-10-31
+
+[cmoa-15]
+title="Chronical Moshers O.A."
+location="Mühlteich, Hauptmannsgrün"
+date=2015-06-12
+
+[death-metal-15]
+title="Death Metal"
+location="Alte Brauerei Annaberg"
+date=2015-01-09
+
+[metal-crossfire-15]
+title="Metal Crossfire IV"
+location="BAV Rodewisch"
+date=2015-10-31
+
+[burning-alm-15]
+title="Burning Alm Festival"
+location="Pleinfeld"
+date=2015-08-22
+
+[heavy-duty-15]
+title="Heavy Duty Dresden"
+location="Dresden"
+date=2015-04-18
+
+[frozen-death-15]
+title="Frozen Death Party"
+location="Steingeld-Hausen"
+date=2015-03-14
+
+[metal-mutilation]
+title="Metal Mutilation"
+location="Merkneukirchen"
+date=2015-04-11
+
+[headbangers-night-15]
+title="Headbangers Night"
+location="Klubhaus, Freiberg"
+date=2015-04-10
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[death-sentences-14]
+title="Death Sentences"
+location="Rathaussaal Liebengrün"
+date=2014-12-20
+
+[raurnacht-14]
+title="Rauhnacht"
+location="Malzhaus, Plauen"
+date=2014-12-05
+
+[woa-road-show]
+title="WOA Roadshow 2014"
+location="F-Haus, Jena"
+date=2014-11-07
+
+[rude-14]
+title="Rock unter den Eichen"
+location="Bertingen"
+date=2014-07-26
+
+[cmoa-14]
+title="Chronical Moshers O.A."
+location="Mühlteich Hauptmannsgrün"
+date=2015-06-14
+
+[in-flammen-14]
+title="In Flammen"
+location="Felsenkeller, Weisenfels"
+date=2014-07-10
+
+[in-flammen-warmup-14]
+title="In Flammen O.A. Warm Up"
+location="Schlosskeller, Weisenfels"
+date=2014-05-23
+
+[five-bucks-for]
+title="Fuve Bucks for Vivienne"
+location="Alter Gasometer, Zwicjau"
+date=2014-05-10
+
+[deathfest-14]
+title="Deathfest 2014"
+location="Hallo5, Leipzig"
+date=2014-04-12
+
+[chemiefabrik-14]
+title="Chemiefabrik"
+location="Chemiefabrik, Dresden"
+date=2014-01-04
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[chemiefabrik-13]
+title="New Years Mosh"
+location="Chemiefabrik, Dresden"
+date=2013-12-28
+
+[beiersdorf-13]
+title="Post Apocalypse Now!"
+location="Landgasthof, Beiersdorf"
+date=2013-12-21
+
+[stromgitarren-festival-13]
+title="Brutz & Brakel Stromgitarrenfest 4"
+location="H.O.F.23, Berlin"
+date=2013-11-08
+
+[metalween-crostwitz-13]
+title="Metalween 2013"
+location="Jugendclub Crostwitz"
+date=2013-11-01
+
+[liebengruen-13]
+title="Liebengrün"
+location=""
+date=2013-10-19
+
+[death-from-the-east-13]
+title="Death from the East"
+location="Schlosskeller, Weißenfels"
+date=2013-10-03
+
+[metal-mania-wittstock-13]
+title="Metal Mainia VII"
+location="Havanna, Wittstock"
+date=2013-09-28
+
+[birthday-metal-battle-13]
+title="Birthday Metal Battle"
+location="Heizhaus, Ilsenburg"
+date=2013-09-28
+
+[stormcrusher-13]
+title="Stormcrusher Festival"
+location="Reitanlage Wiesau"
+date=2013-09-21
+
+[metal-embrace-13]
+title="Metal Embrace Festival"
+location="Barleben, Magdeburg"
+date=2013-09-07
+
+[altenberga-13]
+title="Altenberga"
+location=""
+date=2013-07-20
+
+[wff-13]
+title="With Full Force"
+location=""
+date=2013-06-28
+
+[metal-meetings-13]
+title="Metal Meetings"
+location="Sächsischer Bahnhof, Gera"
+date=2013-05-25
+
+[cmoa-warmup]
+title="CMOA Warm Up"
+location="Sächsischer Bahnhof, Gera"
+date=2013-05-17
+
+[freie-geister-13]
+title="FreieGeisterFestival"
+location="Bremen"
+date=2013-03-05
+
+[factory-magdeburg-13]
+title="Factory Magdeburg"
+location="FACTORY, Magdeburg"
+date=2013-01-05
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[metal-stammtisch-12]
+title="Metal Stammtisch Saalfeld"
+location="Klubhaus Saalfeld"
+date=2012-03-03
+
+[spring-rock-12]
+title="Spring Rock"
+location="Mühlteich, Hauptmannsgrün"
+date=2012-03-31
+
+[crush-the-valley-12]
+title="Crush the Valley"
+location="Cambrinus, Klingenthal"
+date=2012-05-12
+
+[cmoa-12]
+title="Chronical Moshers O.A."
+location="Mühlteich, Hauptmannsgrün"
+date=2012-06-09
+
+[psoa-12]
+title="PartySan O.A."
+location="Flugplatz Obermehler, Schlotheim"
+date=2012-08-10
+
+[schweinemastoa-12]
+title="Schweinemast O.A."
+location="Paintball-Arena, Daßlitz"
+date=2012-09-08
+
+[hell-inside-12]
+title="Hell Inside"
+location="Posthalle Würzburg"
+date=2012-10-05
+
+[wrath-of-durga-release]
+title="Metal Rising"
+location="Volkshaus Gera/Zwötzen"
+date=2012-10-26
+
+[saalfeld-stammtisch-12]
+title="Saalfelder Metal Stammtisch"
+location="Klubhaus Saalfeld"
+date=2012-11-17
+
+[calling-the-reaper-12]
+title="Calling the Reaper"
+location="Cafe Wagner, Jena"
+date=2012-11-23
+
+[fuck-x-mas12]
+title="Fuck-X-mas"
+location="H.O.F.23, Berlin"
+date=2012-12-22
+
+# ----------------------------------------------------------------------------------------------------------------------
+
+[sanitaetsstelle-11]
+title="Sanitätsstelle"
+location="Altchemnitzer Straße"
+date=2011-12-02
+
+[metal-birthday-11]
+title="Metal Birthday 2011"
+location="Sächsischer Bahnhof Gera"
+date=2011-11-19
+
+[rekwi-11]
+title="Rekwi Festival"
+location="Fichtgebirgshalle, Wunsiedel"
+date=2011-10-29
+
+[zwiebel-assault-11]
+title="Zwiebel Assault"
+location="Atrium Weimar"
+date=2011-10-07
+
+[betonwerk-11]
+title="Rock im Betonwerk"
+location="Betonwork, Mittelbach"
+date=2011-08-13
+
+[in-flammen-11]
+title="In Flammen O.A."
+location="Torgau, Entenfang"
+date=2011-07-08
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[releaseparty]
+title="Releaseparty"
+location="E-Werk, Reichenbach"
+date=2011-02-12
+
+[rosenkeller]
+title="Rosenkeller"
+location="Rosenkeller, Jena"
+date=2010-10-15
+
+[186-years]
+title="186 years of lunacy"
+location="Sächsischer Bahnhof, Gera"
+date=2010-09-04
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+[zur-linde-09]
+title="Gasthof Zur Linde"
+location="Reichenbach"
+date=2009-02-21
+
+[metalmeeting-09]
+title="Metal Meeting"
+location="Untergrund, Gera"
+date=2009-05-23
+
+[cmoa-09]
+title="Chronical Moshers O.A."
+location="Hauptmannsgrün"
+date=2009-06-12
+
