@@ -131,7 +131,7 @@ def run(domain: str, port: int, reverse_proxy: bool):
     if not reverse_proxy:
         @s.app.get('/static/<path:path>')
         def static_files(path: str):
-            root = s.get_statics_path()
+            root = s.get_static_path()
             return bottle.static_file(path, root=root)
 
     @s.app.get('/')

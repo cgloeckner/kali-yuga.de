@@ -41,6 +41,10 @@ class WebServer(ServerApi):
 
         return f'/static{relative_url}'
 
+    def get_static_path(self) -> pathlib.Path:
+        """Returns local path to static files (css sheets etc.)"""
+        return self.local_root / 'views' / 'static'
+
     def run(self) -> None:
         bottle.run(
             host=self.args['host'],
@@ -50,10 +54,6 @@ class WebServer(ServerApi):
             quiet=self.args['quiet'],
             server=self.args['server']
         )
-
-    def get_statics_path(self) -> pathlib.Path:
-        """Returns local path to static files (css sheets etc.)"""
-        return self.local_root / 'static'
 
     def get_public_url(self, route: str = '') -> str:
         """Returns the public uri with or without a route. HTTPS is assumed in production mode.

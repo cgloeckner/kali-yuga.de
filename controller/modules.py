@@ -17,6 +17,9 @@ class ServerApi(ABC):
     def get_local_root(self) -> pathlib.Path: ...
 
     @abstractmethod
+    def get_static_path(self) -> pathlib.Path: ...
+
+    @abstractmethod
     def get_static_url(self, relative_url: str) -> str: ...
 
 
