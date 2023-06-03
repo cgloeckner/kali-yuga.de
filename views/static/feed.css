@@ -7,15 +7,12 @@ div.feed {
 
 div.feed > img.large-logo {
     padding: 25px;
-
-/*
-    width: 50%;
+    width: 40vw;
 
     position: absolute;
+    top: 80px;
     left: 0;
     right: 0;
-    top: 80px;
-*/
 }
 
 div.feed > div.elements {
@@ -28,4 +25,13 @@ div.feed > div.elements {
 div.feed > div.elements > iframe {
     padding: 10px;
     border: 0px;
+}
+
+@media screen and (max-width: 800px) {
+
+    div.feed > img.large-logo {
+        top: 20px;
+        width: 200px;
+    }
+
 }
