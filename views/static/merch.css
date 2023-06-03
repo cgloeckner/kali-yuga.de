@@ -12,6 +12,7 @@ div.merch > div.grouping > div.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 div.merch > div.grouping > div.toggle {
@@ -79,16 +80,7 @@ div.merch > div.grouping > div.container > div.item > div.sold {
 @media screen and (max-width: 800px) {
 
     div.merch > div.grouping > div.container > div.item {
-        width: 40%;
-        max-width: unset;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-
-    div.merch > div.grouping > div.container > div.item {
-        width: 75%;
+        width: 45%;
         max-width: unset;
     }
 

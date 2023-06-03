@@ -38,18 +38,6 @@ div.lineup > div.overview > div.member > div {
     text-align: center;
     line-height: 1.5;
     padding: 1px;
-
-    /* move up and release spacing below */
-    /*
-    position: relative;
-    top: -50px;
-    user-select: none;
-    height: 0px;
-    margin: 0px;
-
-    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
-               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
-    */
 }
 
 div.lineup > div.overview > div.member > div.name {
@@ -78,12 +66,4 @@ div.lineup > div.overview > div.member > div.projects {
         max-width: unset;
     }
 
-}
-
-@media screen and (max-width: 600px) {
-
-    div.lineup > div.overview > div.member {
-        width: 50%;
-        max-width: unset;
-    }
 }

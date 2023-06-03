@@ -9,6 +9,7 @@ div.gallery > div.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 div.gallery > div.container > div.thumbnail {
@@ -37,12 +38,12 @@ div.gallery > div.container > div.thumbnail > a > img:hover {
 }
 
 /* shrink on smaller screen */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
     div.gallery > div.container > div.thumbnail {
-        width: 50%;
+        width: 40%;
         max-width: unset;
-        height: 50%;
+        height: 40%;
         max-height: unset;
     }
 }
