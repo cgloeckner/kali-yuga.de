@@ -37,7 +37,7 @@ class WebServer(ServerApi):
     def get_static_url(self, relative_url: str) -> str:
         if self.args['reverse_proxy']:
             domain = self.args['domain']
-            return f'http://static.{domain}{relative_url}'
+            return f'https://static.{domain}{relative_url}'
 
         return f'/static{relative_url}'
 
