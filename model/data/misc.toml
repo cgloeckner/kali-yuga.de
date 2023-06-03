@@ -1,23 +1,5 @@
-[pott]
-title="Kaffeetasse"
-thumbnail="kaffeetasse"
-description="schwarz mit weißem Druck"
-price=1000
-
-[feuerzeug]
-title="Feuerzeug"
-thumbnail="feuerzeug"
-description="schwarz mit weißem Druck"
-price=150
-
-[aufkleber]
-title="Aufkleber"
-thumbnail="aufkleber"
-description="selbstklebend"
-price=100
-
 [patch]
 title="Patch"
 thumbnail="patch"
-description="aus Stoff"
+description=""
 price=500

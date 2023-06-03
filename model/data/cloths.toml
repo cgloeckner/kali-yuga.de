@@ -1,23 +1,5 @@
-[shirt1]
-title="Logo-Shirt"
-thumbnail="random-shirt"
-description="S-XL"
-price=1200
-
-[shirt2]
-title="T-Shirt „Lord of Lies“"
-thumbnail="random-shirt"
-description="S-XL, Rücken: „Lord of Lies“"
+[shirt-devastation]
+title="Shirt „Designed for Devastation“"
+thumbnail="shirt-designed-for-devastation"
+description=""
 price=1500
-
-[girlie1]
-title="Girlie-Shirt Logo"
-thumbnail="girlie-xyz"
-description="XS-L"
-price=1200
-
-[hoodie1]
-title="Zipper"
-thumbnail="example-hoodie"
-description="M-XL"
-price=-1

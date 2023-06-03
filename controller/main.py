@@ -165,7 +165,7 @@ def run(domain: str, port: int, reverse_proxy: bool):
 
     @s.app.get('/presskit')
     def static_presskit():
-        path = pathlib.Path(p.zip_file.name)
+        path = pathlib.Path(p.zip_file)
         return bottle.static_file(path.name, root=path.parent, download='Kali Yuga EPK', mimetype='application/zip')
 
     s.run()
