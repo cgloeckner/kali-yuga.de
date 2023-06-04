@@ -31,6 +31,9 @@ class WebServer(ServerApi):
     def get_booking_email(self) -> str:
         return get_email_address('booking', self.args['domain'])
 
+    def get_webmaster_email(self) -> str:
+        return get_email_address('webmaster', self.args['domain'])
+
     def get_local_root(self) -> pathlib.Path:
         return self.local_root
 

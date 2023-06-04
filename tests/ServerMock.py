@@ -16,6 +16,9 @@ class ServerMock(ServerApi):
     def get_booking_email(self) -> str:
         return f'booking@example.com'
 
+    def get_webmaster_email(self) -> str:
+        return f'webmaster@example.com'
+
     def get_local_root(self) -> pathlib.Path:
         return self.root
 

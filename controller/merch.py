@@ -50,5 +50,4 @@ class Merch(BaseModule):
 
     def render(self) -> None:
         self.template = bottle.template('merch/index', data=self.data, merch_email=self.server.get_merch_email(),
-                                        contact_email=self.server.get_contact_email(),
                                         get_static_url=self.server.get_static_url)

@@ -1,4 +1,4 @@
-%include('header', get_static_url=get_static_url, module_css='feed')
+%include('header', module_css='feed')
 
 <img class="title" src="{{get_static_url('/content/titles/feed.jpg')}}">
 
@@ -6,7 +6,7 @@
 
     <img class="large-logo" src="{{get_static_url('/content/logo_inverted.png')}}">
 
-    <h1>KALI YUGA - Official Homepage</h1>
+    <h1>KALI YUGA - Death Metal</h1>
 
     <div class="elements">
 

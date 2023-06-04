@@ -1,6 +1,6 @@
 %include('header', module_css='impressum')
 
-<div class='impressum'>
+<div class="impressum">
 
 <br>
 <br>
@@ -22,7 +22,7 @@ Angaben gemäß § 5 TMG
     <br>
     <b>Kontakt:</b><br>
     Telefon: 0365-2041114<br>
-    E-Mail: <a href='mailto:{{contact_email}}'>{{contact_email}}</a><br>
+    E-Mail: <a href="mailto:{{contact_email}}">{{contact_email}}</a><br>
 </p>
 
 <hr>

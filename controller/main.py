@@ -71,8 +71,12 @@ def main(server_kwargs, render_only: bool):
     homepage.export_html(epk, root / 'presskit.html')
 
     # render impressum
-    i = bottle.template('impressum', contact_email=api.get_contact_email(), get_static_url=api.get_static_url)
-    homepage.export_html(i, root / 'imprint.html')
+    imprint = bottle.template('impressum', contact_email=api.get_contact_email(), get_static_url=api.get_static_url)
+    homepage.export_html(imprint, root / 'imprint.html')
+
+    # render contact
+    contact = bottle.template('contact', all_emails=api.get_all_emails(), get_static_url=api.get_static_url)
+    homepage.export_html(contact, root / 'contact.html')
 
     if render_only:
         return
@@ -108,9 +112,12 @@ def main(server_kwargs, render_only: bool):
         return homepage.merch.template
 
     @api.app.get('/imprint')
-    @bottle.view('impressum')
     def impressum_page():
-        return dict(contact_email=api.get_contact_email(), get_static_url=api.get_static_url)
+        return imprint
+
+    @api.app.get('/contact')
+    def contact_page():
+        return contact
 
     @api.app.get('/presskit')
     def static_presskit():

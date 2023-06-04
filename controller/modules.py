@@ -1,6 +1,7 @@
 import pathlib
 
 from abc import abstractmethod, ABC
+from typing import Dict
 
 
 class ServerApi(ABC):
@@ -12,6 +13,17 @@ class ServerApi(ABC):
 
     @abstractmethod
     def get_booking_email(self) -> str: ...
+
+    def get_all_emails(self) -> Dict[str, str]:
+        return {
+            'contact': self.get_contact_email(),
+            'merch': self.get_merch_email(),
+            'booking': self.get_booking_email(),
+            'webmaster': self.get_webmaster_email()
+        }
+
+    @abstractmethod
+    def get_webmaster_email(self) -> str: ...
 
     @abstractmethod
     def get_local_root(self) -> pathlib.Path: ...
