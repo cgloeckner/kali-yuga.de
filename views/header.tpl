@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="de" style="background-image: url('{{get_static_url('/content/background.jpg')}}');">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{get_static_url('/content/kali_icon.png')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{get_static_url('/content/apple-touch-icon.png')}}">
@@ -27,11 +27,9 @@
     <title>{{title}}</title>
 %url = '' if module_name == 'feed' else module_name
     <link rel="canonical" href="https://www.kali-yuga.de/{{url}}">
-    <meta charset="utf-8">
     <meta name="title" content="{{title}}">
     <meta name="description" content="{{description}}">
-    <meta name="keywords" content="Kali Yuga, Kaliyuga, Kali-Yuga, Death Metal, Melodic Death Metal, Band, Gera">
-    <meta http-equiv="content-language" content="de">
+    <meta name="keywords" content="Kali Yuga, Kaliyuga, Kali-Yuga, Death Metal, Melodic Death Metal, Band, Gera"> <!-- but google ignores this anyway //-->
     <meta name="robots" content="index,follow">
     <meta property="og:title" content="{{title}}">
     <meta property="og:site_name" content="{{title}}">
