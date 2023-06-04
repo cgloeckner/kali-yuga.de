@@ -12,16 +12,17 @@ div.gigs > div.list {
     margin-right: auto;
 }
 
-div.gigs > div.list > p {
+div.gigs > div.list > div > p {
     padding: 10px;
     margin: 5px;
-    line-height: 1.0;
+    line-height: 1.5;
+    text-align: center;
 
-    background-color: var(--background-color-light);
+    background-color: var(--background-color-alpha);
 
     border-radius: 5px;
 }
 
-div.gigs > div.list > p.alternate {
-    background-color: var(--background-color-bright);
+div.gigs > div.list > div > p.alternate {
+    background-color: var(--background-color-alpha-v2);
 }

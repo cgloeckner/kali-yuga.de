@@ -44,11 +44,16 @@ div.releases > div.container > div.release > div.column {
 div.releases > div.container > div.release > div.column > div {
     display: block;
     text-align: center;
-    padding: 15px;
+    padding: 5px;
 }
 
 div.releases > div.container > div.release > div.column > div.title {
     font-weight: bold;
+    padding: 0px;
+}
+
+div.releases > div.container > div.release > div.column > div.description {
+    padding-top: 0px;
 }
 
 div.releases > div.container > div.release > div.column > div.tracklist {

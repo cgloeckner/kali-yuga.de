@@ -15,15 +15,6 @@ div.merch > div.grouping > div.container {
     align-items: center;
 }
 
-div.merch > div.grouping > div.toggle {
-    user-select: none;
-    padding: 10px;
-}
-
-div.merch > div.grouping > div.toggle > span:hover {
-    cursor: pointer;
-}
-
 div.merch > div.grouping > div.container > div.item {
     width: 20vw;
     max-width: 300px;
@@ -34,18 +25,11 @@ div.merch > div.grouping > div.container > div.item {
 
     box-sizing: border-box;
 
-    background-color: var(--background-color-light);
-}
-
-div.merch > div.grouping > div.container > div.item:hover {
-    /*background-color: var(--background-color-bright);*/
+    background-color: var(--background-color-alpha);
 }
 
 div.merch > div.grouping > div.container > div.item > img.preview {
     width: 100%;
-}
-
-div.merch > div.grouping > div.container > div.item > img.preview:hover {
 }
 
 div.merch > div.grouping > div.container > div.item > div {

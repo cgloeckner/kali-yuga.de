@@ -13,6 +13,9 @@
 %end
     </div>
 
+    <p class="center">Die Urheberrechte der Bilder liegen bei den jeweiligen Fotografen. Wir bedanken uns für die
+        Genehmigung zur Nutzung.</p>
+
 </div>
 
 %include('footer')

@@ -6,6 +6,8 @@
     --background-color: #030303;
     --background-color-light: #191919;
     --background-color-bright: #353535;
+    --background-color-alpha: rgba(20, 20, 20, 0.75);
+    --background-color-alpha-v2: rgba(35, 35, 35, 0.75);
 
     font-family: sans-serif;
 }
@@ -106,11 +108,31 @@ a.listen > img {
 
 .center {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 hr {
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+p.card {
+    max-width: 600px;
+
+    padding: 15px;
+
+    border-radius: 5px;
+    background-color: var(--background-color-alpha);
+}
+
+div.toggle {
+    user-select: none;
+    padding: 10px;
+}
+
+div.toggle > span:hover {
+    cursor: pointer;
 }
 
 p.footer {

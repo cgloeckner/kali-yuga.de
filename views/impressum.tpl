@@ -14,7 +14,7 @@ Angaben gemäß § 5 TMG
 
 <h2 class="center">Kali Yuga</h2>
 
-<p class="center">
+<p class="center card">
     <b>Vertreten durch: </b><br>
     Jan Koch<br />
     c/o Rechtsanwälte Diehl & Pape<br />

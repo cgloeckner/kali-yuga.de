@@ -14,7 +14,7 @@ div.navigation {
     width: 100%;
     height: 45px;
     display: inline-block;
-    background-color: var(--background-color-light);
+    background-color: var(--background-color-alpha);
 
     position: fixed;
 
@@ -24,7 +24,7 @@ div.navigation {
 div.navigation > div.icon {
     display: none;
 
-    background-color: var(--background-color-light);
+    background-color: var(--background-color-alpha);
     border-radius: 5px;
 
     font-size: 30pt;
