@@ -6,11 +6,11 @@
         <div class="icon">&#x2261;</div>
 
         <div class="elements">
-            <a href="/">Feed</a>
-            <a href="/releases">Releases</a>
-            <a href="/lineup">Lineup</a>
-            <a href="/shows">Shows</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/merch">Merch</a>
+            <a href="/" title="News, Videos">Feed</a>
+            <a href="/releases" title="CDs, Artwork, Tracklists">Releases</a>
+            <a href="/lineup" title="Lineup, Biografie">Lineup</a>
+            <a href="/shows" title="Live Shows">Shows</a>
+            <a href="/gallery" title="Live Fotos">Gallery</a>
+            <a href="/merch" title="Merchandise">Merch</a>
         </div>
     </div>
