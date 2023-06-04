@@ -42,17 +42,17 @@ class Homepage:
         self.presskit = presskit.Presskit(api=api)
         self.presskit.build()
 
-        # build sidemap.xml
-        self.sidemap = seo.Sidemap()
-        self.sidemap.append(f'https://www.kali-yuga.de')
-        self.sidemap.append(f'https://www.kali-yuga.de/')
-        self.sidemap.append(f'https://www.kali-yuga.de/releases')
-        self.sidemap.append(f'https://www.kali-yuga.de/lineup')
-        self.sidemap.append(f'https://www.kali-yuga.de/shows')
-        self.sidemap.append(f'https://www.kali-yuga.de/gallery')
-        self.sidemap.append(f'https://www.kali-yuga.de/merch')
-        self.sidemap.append(f'https://www.kali-yuga.de/contact')
-        self.sidemap.append(f'https://www.kali-yuga.de/imprint')
+        # build sitemap.xml
+        self.sitemap = seo.Sitemap()
+        self.sitemap.append(f'https://www.kali-yuga.de')
+        self.sitemap.append(f'https://www.kali-yuga.de/')
+        self.sitemap.append(f'https://www.kali-yuga.de/releases')
+        self.sitemap.append(f'https://www.kali-yuga.de/lineup')
+        self.sitemap.append(f'https://www.kali-yuga.de/shows')
+        self.sitemap.append(f'https://www.kali-yuga.de/gallery')
+        self.sitemap.append(f'https://www.kali-yuga.de/merch')
+        self.sitemap.append(f'https://www.kali-yuga.de/contact')
+        self.sitemap.append(f'https://www.kali-yuga.de/imprint')
 
         # build robots.txt
         self.robots = seo.RobotsTxt(api, 'https://www.kali-yuga.de/sidemap.xml')
@@ -93,8 +93,8 @@ def main(server_kwargs, render_only: bool):
     contact = bottle.template('contact', all_emails=api.get_all_emails(), get_static_url=api.get_static_url)
     homepage.export_html(contact, root / 'contact.html')
 
-    # render sidemap and robots.txt
-    homepage.sidemap.save_to_xml(api.get_build_root() / 'sidemap.xml')
+    # render sitemap and robots.txt
+    homepage.sitemap.save_to_xml(api.get_build_root() / 'sitemap.xml')
     homepage.robots.save_to_txt(api.get_build_root() / 'robots.txt')
 
     if render_only:
@@ -148,9 +148,9 @@ def main(server_kwargs, render_only: bool):
         robots_root = api.get_build_root()
         return bottle.static_file('robots.txt', root=robots_root)
 
-    @api.app.get('/sidemap.xml')
+    @api.app.get('/sitemap.xml')
     def robots_txt():
         robots_root = api.get_build_root()
-        return bottle.static_file('sidemal.xml', root=robots_root)
+        return bottle.static_file('sitemap.xml', root=robots_root)
 
     api.run()

@@ -6,7 +6,7 @@ from typing import List
 from .modules import ServerApi
 
 
-class Sidemap(List[str]):
+class Sitemap(List[str]):
     def save_to_xml(self, filename: pathlib.Path) -> None:
         root = et.Element('urlset')
         root.set('xmlns', "http://www.sitemaps.org/schemas/sitemap/0.9")

@@ -8,4 +8,4 @@ from .gallery import Gallery
 from .merch import Merch, MerchCategory
 from .presskit import Presskit
 
-from .seo import Sidemap
+from .seo import Sitemap
