@@ -1,10 +1,10 @@
 %include('header', module_name='feed')
 
-<img class="title" src="{{get_static_url('/content/titles/feed.jpg')}}">
+<img class="title" alt="Kali Yuga Live Foto" src="{{get_static_url('/content/titles/feed.jpg')}}">
 
 <div class="feed">
 
-    <img class="large-logo" src="{{get_static_url('/content/logo_inverted.png')}}">
+    <img class="large-logo" alt="Kali Yuga" src="{{get_static_url('/content/logo_inverted.png')}}">
 
     <h1>KALI YUGA - Death Metal</h1>
 

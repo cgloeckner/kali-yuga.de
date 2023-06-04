@@ -1,6 +1,5 @@
     <a href="/">
-        <img class="navi-logo blurred" src="{{get_static_url('/content/logo_inverted.png')}}">
-        <img class="navi-logo" src="{{get_static_url('/content/logo_inverted.png')}}">
+        <img class="navi-logo" alt="Kali Yuga" src="{{get_static_url('/content/logo_inverted.png')}}">
     </a>
 
     <div class="navigation">

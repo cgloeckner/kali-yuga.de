@@ -1,6 +1,6 @@
 %include('header', module_name='gigs')
 
-<img class="title" src="{{get_static_url('/content/titles/gigs.jpg')}}">
+<img class="title" alt="Kali Yuga Live Foto" src="{{get_static_url('/content/titles/gigs.jpg')}}">
 
 <div class="gigs">
 

@@ -1,6 +1,6 @@
 %include('header', module_name='lineup')
 
-<img class="title" src="{{get_static_url('/content/titles/lineup.jpg')}}">
+<img class="title" alt="Kali Yuga Live Foto" src="{{get_static_url('/content/titles/lineup.jpg')}}">
 
 <div class="lineup">
 
