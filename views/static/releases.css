@@ -57,11 +57,6 @@ div.releases > div.container > div.release > div.column > div.tracklist {
     line-height: 1.25;
 }
 
-a.listen > img {
-    display: inline;
-    width: 14px;
-}
-
 
 /* shrink on smaller screen */
 @media screen and (max-width: 600px) {
