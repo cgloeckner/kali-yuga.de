@@ -22,13 +22,14 @@
     <meta charset="utf-8">
     <meta name="title" content="{{title}}">
     <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="Kali Yuga, Kaliyuga, Kali-Yuga, Death Metal, Melodic Death Metal, Band, Gera">
     <meta http-equiv="content-language" content="de">
     <meta name="robots" content="index,follow">
     <meta property="og:title" content="{{title}}">
     <meta property="og:site_name" content="{{title}}">
     <meta property="og:description" content="{{description}}">
     <meta property="og:url" content="https://www.kali-yuga.de">
+    <meta name="HandheldFriendly" content="true">
     <meta name="format-detection" content="telephone=yes">
 </head>
 
