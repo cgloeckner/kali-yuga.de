@@ -7,11 +7,11 @@
         <div class="icon">&#x2261;</div>
 
         <div class="elements">
-            <a class="hoverable" href="/">Feed</a>
-            <a class="hoverable" href="/releases">Releases</a>
-            <a class="hoverable" href="/lineup">Lineup</a>
-            <a class="hoverable" href="/shows">Shows</a>
-            <a class="hoverable" href="/gallery">Gallery</a>
-            <a class="hoverable" href="/merch">Merch</a>
+            <a href="/">Feed</a>
+            <a href="/releases">Releases</a>
+            <a href="/lineup">Lineup</a>
+            <a href="/shows">Shows</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/merch">Merch</a>
         </div>
     </div>

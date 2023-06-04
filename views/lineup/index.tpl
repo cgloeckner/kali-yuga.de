@@ -1,4 +1,4 @@
-%include('header', module_css='lineup')
+%include('header', module_name='lineup')
 
 <img class="title" src="{{get_static_url('/content/titles/lineup.jpg')}}">
 

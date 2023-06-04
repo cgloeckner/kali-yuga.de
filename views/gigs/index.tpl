@@ -1,4 +1,4 @@
-%include('header', module_css='gigs')
+%include('header', module_name='gigs')
 
 <img class="title" src="{{get_static_url('/content/titles/gigs.jpg')}}">
 

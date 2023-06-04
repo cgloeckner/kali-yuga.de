@@ -2,6 +2,7 @@
     --text-color: #f5f5f5;
     --text-blur-color: #606060;
     --link-color: #ffffff;
+    --link-hover-color: #a0a0a0;
     --background-color: #030303;
     --background-color-light: #191919;
     --background-color-bright: #353535;
@@ -30,7 +31,7 @@ p {
 }
 
 a {
-    color: var(--link-color);
+    color: var(--text-color);
     cursor: pointer;
 
     text-decoration: none;
@@ -39,9 +40,8 @@ a {
 }
 
 a:hover {
+    color: var(--link-hover-color);
     text-decoration: underline;
-
-    transform: scale(1.15);
 }
 
 img {
@@ -111,6 +111,11 @@ hr {
 p.footer {
     padding: 25px;
     font-size: x-small;
+}
+
+p.footer > a > img.social {
+    display: inline;
+    width: 18px;
 }
 
 p.footer > a.scroll-up {

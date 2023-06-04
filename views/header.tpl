@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{{get_static_url('/content/kali_icon.png')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{get_static_url('/content/apple-touch-icon.png')}}">
 
-%for css in ['normalize', 'layout', 'navigation', module_css]:
+%for css in ['normalize', 'layout', 'navigation', module_name]:
     %url = get_static_url('/' + css + '.css')
     <link rel="stylesheet" type="text/css" href="{{url}}">
 %end

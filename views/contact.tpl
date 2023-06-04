@@ -1,4 +1,4 @@
-%include('header', module_css='contact')
+%include('header', module_name='contact')
 
 <div class="contact">
 

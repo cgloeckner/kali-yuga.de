@@ -67,10 +67,6 @@ div.navigation > div.elements > a {
     text-shadow: 0px 0px 5px black;
 }
 
-div.navigation > div.elements > a.right {
-    float: right;
-}
-
 div.navigation > div.elements > a:hover {
     text-shadow: 0px 0px 25px var(--text-blur-color);
 }

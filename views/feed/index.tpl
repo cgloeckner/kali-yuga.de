@@ -1,4 +1,4 @@
-%include('header', module_css='feed')
+%include('header', module_name='feed')
 
 <img class="title" src="{{get_static_url('/content/titles/feed.jpg')}}">
 
