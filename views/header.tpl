@@ -23,13 +23,12 @@
     %title.append(module_title)
 %end
 %title = ' - '.join(title)
-%description = 'KALI YUGA ist eine Death Metal Band aus Gera, bestehend aus Eik (Gitarre), Michael (Gitarre), Jan (Bass), Christian (Gesang) und Jean-Peer (Schlagzeug).'
     <title>{{title}}</title>
 %url = '' if module_name == 'feed' else module_name
     <link rel="canonical" href="https://www.kali-yuga.de/{{url}}">
     <meta charset="utf-8">
     <meta name="title" content="{{title}}">
-    <meta name="description" content="">
+    <meta name="description" content="{{description}}">
     <meta name="keywords" content="Kali Yuga, Kaliyuga, Kali-Yuga, Death Metal, Melodic Death Metal, Band, Gera">
     <meta http-equiv="content-language" content="de">
     <meta name="robots" content="index,follow">

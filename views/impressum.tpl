@@ -1,3 +1,4 @@
+%description = 'Die offizielle Homepage KALI YUGA enthält Infos zu Lineup, Releases, Live Shows, Bilder und Merchandise.'
 %include('header', module_name='impressum')
 
 <div class="impressum">

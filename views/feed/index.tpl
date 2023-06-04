@@ -1,3 +1,4 @@
+%description = 'Die offizielle Homepage der Geraer Death Metal Band KALI YUGA mit Infos zu Merchandise, Live Shows und vielem mehr.'
 %include('header', module_name='feed')
 
 <img class="title" alt="Kali Yuga Live Foto" src="{{get_static_url('/content/titles/feed.jpg')}}">

@@ -1,3 +1,4 @@
+%description = 'CDs, T-Shirts und mehr hält die Geraer Death Metal Band KALI YUGA für den geneigten Fan bereit. Anfragen an ' + merch_email
 %include('header', module_name='merch')
 
 <img class="title" alt="Kali Yuga Live Foto" src="{{get_static_url('/content/titles/merch.jpg')}}">

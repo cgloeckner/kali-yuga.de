@@ -1,3 +1,4 @@
+%description = 'Mit einem Live-Set aus neuem aber auch bekannten Songmaterial steht die Geraer Death Metal Band KALI YUGA zur Verfügung. Anfragen an ' + booking_email
 %include('header', module_name='gigs')
 
 <img class="title" alt="Kali Yuga Live Foto" src="{{get_static_url('/content/titles/gigs.jpg')}}">

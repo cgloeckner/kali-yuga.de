@@ -1,3 +1,4 @@
+%description = 'Mit LORD OF LIES entsteht die fünfte Veröffentlichung der Geraer Death Metal Band KALI YUGA.'
 %include('header', module_name='releases')
 
 <img class="title" alt="Kali Yuga Live Foto" src="{{get_static_url('/content/titles/releases.jpg')}}">
