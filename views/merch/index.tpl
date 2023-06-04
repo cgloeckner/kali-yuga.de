@@ -4,7 +4,7 @@
 
 <div class="merch">
 
-<h1 class="shifted">Merchandise</h1>
+<h1 class="shifted">{{module_title}}</h1>
 
 <p class="center">Anfragen / Bestellungen an: <a href="mailto:{{merch_email}}">{{merch_email}}</a></p>
 

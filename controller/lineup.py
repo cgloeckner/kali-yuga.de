@@ -16,4 +16,5 @@ class Lineup(BaseModule):
             self.data = tomli.load(file)
 
     def render(self) -> None:
-        self.template = bottle.template('lineup/index', data=self.data, get_static_url=self.server.get_static_url)
+        self.template = bottle.template('lineup/index', module_title='Lineup', data=self.data,
+                                        get_static_url=self.server.get_static_url)

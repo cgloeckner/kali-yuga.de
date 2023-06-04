@@ -36,5 +36,6 @@ class Gigs(BaseModule):
         self.data = self.process_gigs(gigs)
 
     def render(self) -> None:
-        self.template = bottle.template('gigs/index', data=self.data, booking_email=self.server.get_booking_email(),
+        self.template = bottle.template('gigs/index', module_title='Live Shows', data=self.data,
+                                        booking_email=self.server.get_booking_email(),
                                         get_static_url=self.server.get_static_url)

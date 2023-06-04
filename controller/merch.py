@@ -49,5 +49,5 @@ class Merch(BaseModule):
             self.data[category].sort(key=lambda cd: cd['year'], reverse=True)
 
     def render(self) -> None:
-        self.template = bottle.template('merch/index', data=self.data, merch_email=self.server.get_merch_email(),
-                                        get_static_url=self.server.get_static_url)
+        self.template = bottle.template('merch/index', module_title='Merchandise', data=self.data,
+                                        merch_email=self.server.get_merch_email(), get_static_url=self.server.get_static_url)

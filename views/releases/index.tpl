@@ -4,7 +4,7 @@
 
 <div class="releases">
 
-<h1 class="shifted">Releases</h1>
+<h1 class="shifted">{{module_title}}</h1>
 
     <div class="container">
 %for item in data:

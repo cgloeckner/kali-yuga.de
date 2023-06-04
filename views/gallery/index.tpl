@@ -4,7 +4,7 @@
 
 <div class="gallery">
 
-<h1 class="shifted">Gallery</h1>
+<h1 class="shifted">{{module_title}}</h1>
 
     <div class="container">
 %for file in data:

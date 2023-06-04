@@ -4,7 +4,7 @@
 
 <div class="gigs">
 
-<h1 class="shifted">Live Shows</h1>
+<h1 class="shifted">{{module_title}}</h1>
 
 <p class="center"><a href="mailto:{{booking_email}}">{{booking_email}}</a></p>
 
