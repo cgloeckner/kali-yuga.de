@@ -2,7 +2,7 @@ import pathlib
 
 import bottle
 
-from . import server, modules, feed, releases, lineup, gigs, gallery, merch, presskit
+from . import server, modules, feed, releases, lineup, gigs, gallery, merch, presskit, seo
 
 
 class Homepage:
@@ -42,6 +42,21 @@ class Homepage:
         self.presskit = presskit.Presskit(api=api)
         self.presskit.build()
 
+        # build sidemap.xml
+        self.sidemap = seo.Sidemap()
+        self.sidemap.append(f'https://www.kali-yuga.de')
+        self.sidemap.append(f'https://www.kali-yuga.de/')
+        self.sidemap.append(f'https://www.kali-yuga.de/releases')
+        self.sidemap.append(f'https://www.kali-yuga.de/lineup')
+        self.sidemap.append(f'https://www.kali-yuga.de/shows')
+        self.sidemap.append(f'https://www.kali-yuga.de/gallery')
+        self.sidemap.append(f'https://www.kali-yuga.de/merch')
+        self.sidemap.append(f'https://www.kali-yuga.de/contact')
+        self.sidemap.append(f'https://www.kali-yuga.de/imprint')
+
+        # build robots.txt
+        self.robots = seo.RobotsTxt(api, api.get_static_url('sidemap.xml'))
+
     @staticmethod
     def export_html(html: str, filename: pathlib.Path) -> None:
         with open(filename, 'w') as file:
@@ -77,6 +92,10 @@ def main(server_kwargs, render_only: bool):
     # render contact
     contact = bottle.template('contact', all_emails=api.get_all_emails(), get_static_url=api.get_static_url)
     homepage.export_html(contact, root / 'contact.html')
+
+    # render sidemap and robots.txt
+    homepage.sidemap.save_to_xml(api.get_static_path() / 'sidemap.xml')
+    homepage.robots.save_to_txt(api.get_local_root() / '.build' / 'robots.txt')
 
     if render_only:
         return
@@ -123,5 +142,10 @@ def main(server_kwargs, render_only: bool):
     def static_presskit():
         path = pathlib.Path(homepage.presskit.zip_file)
         return bottle.static_file(path.name, root=path.parent, download='Kali Yuga EPK', mimetype='application/zip')
+
+    @api.app.get('/robots.txt')
+    def robots_txt():
+        robots_root = api.get_local_root() / '.build'
+        return bottle.static_file('robots.txt', root=robots_root)
 
     api.run()
