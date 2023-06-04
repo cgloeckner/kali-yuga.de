@@ -37,6 +37,9 @@ class WebServer(ServerApi):
     def get_local_root(self) -> pathlib.Path:
         return self.local_root
 
+    def get_build_root(self) -> pathlib.Path:
+        return self.local_root / '.build'
+
     def get_static_url(self, relative_url: str) -> str:
         if self.args['reverse_proxy']:
             domain = self.args['domain']

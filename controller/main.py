@@ -55,7 +55,7 @@ class Homepage:
         self.sidemap.append(f'https://www.kali-yuga.de/imprint')
 
         # build robots.txt
-        self.robots = seo.RobotsTxt(api, api.get_static_url('sidemap.xml'))
+        self.robots = seo.RobotsTxt(api, 'https://www.kali-yuga.de/sidemap.xml')
 
     @staticmethod
     def export_html(html: str, filename: pathlib.Path) -> None:
@@ -71,7 +71,7 @@ def main(server_kwargs, render_only: bool):
     homepage = Homepage(api)
 
     # export html
-    root = pathlib.Path('./.build')
+    root = api.get_build_root()
     root.mkdir(exist_ok=True)
 
     homepage.export_html(homepage.feed.template, root / 'index.html')
@@ -94,8 +94,8 @@ def main(server_kwargs, render_only: bool):
     homepage.export_html(contact, root / 'contact.html')
 
     # render sidemap and robots.txt
-    homepage.sidemap.save_to_xml(api.get_static_path() / 'sidemap.xml')
-    homepage.robots.save_to_txt(api.get_local_root() / '.build' / 'robots.txt')
+    homepage.sidemap.save_to_xml(api.get_build_root() / 'sidemap.xml')
+    homepage.robots.save_to_txt(api.get_build_root() / 'robots.txt')
 
     if render_only:
         return
@@ -145,7 +145,12 @@ def main(server_kwargs, render_only: bool):
 
     @api.app.get('/robots.txt')
     def robots_txt():
-        robots_root = api.get_local_root() / '.build'
+        robots_root = api.get_build_root()
         return bottle.static_file('robots.txt', root=robots_root)
+
+    @api.app.get('/sidemap.xml')
+    def robots_txt():
+        robots_root = api.get_build_root()
+        return bottle.static_file('sidemal.xml', root=robots_root)
 
     api.run()

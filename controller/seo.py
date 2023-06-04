@@ -28,7 +28,7 @@ class RobotsTxt:
     def save_to_txt(self, filename: pathlib.Path) -> None:
         content = f'''User-agent: *
 Disallow: 
-Sitemap: ''' + self.api.get_static_url('/sidemap.xml')
+Sitemap: ''' + self.path_to_sidemap
 
         with open(filename, 'w') as h:
             h.write(content)
