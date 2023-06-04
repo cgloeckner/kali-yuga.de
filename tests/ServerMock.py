@@ -22,6 +22,9 @@ class ServerMock(ServerApi):
     def get_local_root(self) -> pathlib.Path:
         return self.root
 
+    def get_build_root(self) -> pathlib.Path:
+        return self.root / '.build'
+
     def get_static_path(self) -> pathlib.Path:
         return self.root / 'views' / 'static'
 

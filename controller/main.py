@@ -55,7 +55,7 @@ class Homepage:
         self.sitemap.append(f'https://www.kali-yuga.de/imprint')
 
         # build robots.txt
-        self.robots = seo.RobotsTxt(api, 'https://www.kali-yuga.de/sidemap.xml')
+        self.robots = seo.RobotsTxt(api, 'https://www.kali-yuga.de/sitemap.xml')
 
     @staticmethod
     def export_html(html: str, filename: pathlib.Path) -> None:
