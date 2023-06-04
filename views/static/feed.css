@@ -22,7 +22,7 @@ div.feed > div.elements {
     width: 100%;
 }
 
-div.feed > div.elements > iframe {
+div.feed > div.elements > embed {
     padding: 10px;
     border: 0px;
 }
