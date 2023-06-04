@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/content/kali_icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{get_static_url('/content/kali_icon.png')}}" type="image/x-icon">
 
 %for css in ['normalize', 'layout', 'navigation', 'feed', 'releases', 'lineup', 'gigs', 'gallery', 'merch', 'impressum']:
     %url = get_static_url('/' + css + '.css')
