@@ -1,4 +1,4 @@
-%include('header')
+%include('header', module_css='impressum')
 
 <div class='impressum'>
 
