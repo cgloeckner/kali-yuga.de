@@ -6,21 +6,26 @@ import controller
 
 
 def main():
-    port = 8080
-    reverse_proxy = '--reverse-proxy' in sys.argv
+    server_kwargs = {
+        'host': '0.0.0.0',
+        'server': 'gevent',
+        'domain': 'kali-yuga.de',
+        'port': 8000,
+        'debug': '--debug' in sys.argv,
+        'reloader': '--debug' in sys.argv,
+        'quiet': '--debug' not in sys.argv,
+        'reverse_proxy': '--debug' not in sys.argv
+    }
+
     if '-p' in sys.argv:
         index = sys.argv.index('-p')
-        port = int(sys.argv[index + 1])
+        server_kwargs['port'] = int(sys.argv[index + 1])
 
     if '-h' in sys.argv:
         print('Usage: -p <portnumber>')
         return
 
-    if '--render' in sys.argv:
-        controller.build('kali-yuga.de')
-        return
-
-    controller.run('kali-yuga.de', port, reverse_proxy)
+    controller.main(server_kwargs, '--render' in sys.argv)
 
 
 if __name__ == '__main__':

@@ -2,170 +2,119 @@ import pathlib
 
 import bottle
 
-from . import server, feed, releases, lineup, gigs, gallery, merch, presskit
+from . import server, modules, feed, releases, lineup, gigs, gallery, merch, presskit
 
 
-def export_html(html: str, filename: pathlib.Path) -> None:
-    with open(filename, 'w') as file:
-        file.write(html)
+class Homepage:
+    def __init__(self, api: modules.ServerApi) -> None:
+        # load feed
+        self.feed = feed.Feed(api=api)
+        self.feed.load_from_file()
+        self.feed.render()
+
+        # load lineup
+        self.lineup = lineup.Lineup(api=api)
+        self.lineup.load_from_file()
+        self.lineup.render()
+
+        # load live shows
+        self.gigs = gigs.Gigs(api=api)
+        self.gigs.load_from_file()
+        self.gigs.render()
+
+        # load gallery
+        self.gallery = gallery.Gallery(api=api)
+        self.gallery.load_from_disc()
+        self.gallery.render()
+
+        # load merchandise
+        self.merch = merch.Merch(api=api)
+        for category_str in merch.MerchCategory:
+            self.merch.load_from_file(merch.MerchCategory(category_str))
+        self.merch.render()
+
+        # load releases
+        self.releases = releases.Releases(api=api)
+        self.releases.load_from_merch(self.merch)
+        self.releases.render()
+
+        # build presskit (as static file)
+        self.presskit = presskit.Presskit(api=api)
+        self.presskit.build()
+
+    @staticmethod
+    def export_html(html: str, filename: pathlib.Path) -> None:
+        with open(filename, 'w') as file:
+            file.write(html)
 
 
-def build(domain: str):
-    args = {
-        'host': '0.0.0.0',
-        'domain': domain,
-        'port': 8000,
-        'debug': False,
-        'reloader': False,
-        'quiet': True,
-        'server': 'gevent',
-        'reverse_proxy': True
-    }
+def main(server_kwargs, render_only: bool):
+    # setup webserver
+    api = server.WebServer(server_kwargs)
 
-    s = server.WebServer(args)
+    # load homepage
+    homepage = Homepage(api)
 
+    # export html
     root = pathlib.Path('./.build')
     root.mkdir(exist_ok=True)
 
-    # load feed
-    f = feed.Feed(api=s)
-    f.load_from_file()
-    f.render()
-    export_html(f.template, root / 'index.html')
-
-    # load lineup
-    l = lineup.Lineup(api=s)
-    l.load_from_file()
-    l.render()
-    export_html(l.template, root / 'lineup.html')
-
-    # load live shows
-    g = gigs.Gigs(api=s)
-    g.load_from_file()
-    g.render()
-    export_html(g.template, root / 'shows.html')
-
-    # load gallery
-    gal = gallery.Gallery(api=s)
-    gal.load_from_disc()
-    gal.render()
-    export_html(gal.template, root / 'gallery.html')
-
-    # load merchandise
-    m = merch.Merch(api=s)
-    for category_str in merch.MerchCategory:
-        m.load_from_file(merch.MerchCategory(category_str))
-    m.render()
-    export_html(m.template, root / 'merch.html')
-
-    # load releases
-    r = releases.Releases(api=s)
-    r.load_from_merch(m)
-    r.render()
-    export_html(r.template, root / 'releases.html')
-
-    # build presskit (as static file)
-    p = presskit.Presskit(api=s)
-    p.build()
+    homepage.export_html(homepage.feed.template, root / 'index.html')
+    homepage.export_html(homepage.lineup.template, root / 'lineup.html')
+    homepage.export_html(homepage.gigs.template, root / 'shows.html')
+    homepage.export_html(homepage.gallery.template, root / 'gallery.html')
+    homepage.export_html(homepage.merch.template, root / 'merch.html')
+    homepage.export_html(homepage.releases.template, root / 'releases.html')
 
     # render presskit redirect page
-    epk = bottle.template('epk_redirect', url=s.get_static_url('/presskit.zip'))
-    export_html(epk, root / 'presskit.html')
+    epk = bottle.template('epk_redirect', url=api.get_static_url('/presskit.zip'))
+    homepage.export_html(epk, root / 'presskit.html')
 
     # render impressum
-    i = bottle.template('impressum', contact_email=s.get_contact_email(), get_static_url=s.get_static_url)
-    export_html(i, root / 'impressum.html')
+    i = bottle.template('impressum', contact_email=api.get_contact_email(), get_static_url=api.get_static_url)
+    homepage.export_html(i, root / 'imprint.html')
 
-    print('Rendered HTML to files')
+    if render_only:
+        return
 
-
-def run(domain: str, port: int, reverse_proxy: bool):
-    args = {
-        'host': '0.0.0.0',
-        'domain': domain,
-        'port': port,
-        'debug': not reverse_proxy,
-        'reloader': False,
-        'quiet': reverse_proxy,
-        'server': 'gevent',
-        'reverse_proxy': reverse_proxy
-    }
-
-    s = server.WebServer(args)
-
-    # load feed
-    f = feed.Feed(api=s)
-    f.load_from_file()
-    f.render()
-
-    # load lineup
-    l = lineup.Lineup(api=s)
-    l.load_from_file()
-    l.render()
-
-    # load live shows
-    g = gigs.Gigs(api=s)
-    g.load_from_file()
-    g.render()
-
-    # load gallery
-    gal = gallery.Gallery(api=s)
-    gal.load_from_disc()
-    gal.render()
-
-    # load merchandise
-    m = merch.Merch(api=s)
-    for category_str in merch.MerchCategory:
-        m.load_from_file(merch.MerchCategory(category_str))
-    m.render()
-
-    # load releases
-    r = releases.Releases(api=s)
-    r.load_from_merch(m)
-    r.render()
-
-    # build presskit (as static file)
-    p = presskit.Presskit(api=s)
-    p.build()
-
-    if not reverse_proxy:
-        @s.app.get('/static/<path:path>')
+    if not server_kwargs['reverse_proxy']:
+        @api.app.get('/static/<path:path>')
         def static_files(path: str):
-            root = s.get_static_path()
-            return bottle.static_file(path, root=root)
+            static_root = api.get_static_path()
+            return bottle.static_file(path, root=static_root)
 
-    @s.app.get('/')
+    @api.app.get('/')
     def feed_page():
-        return f.template
+        return homepage.feed.template
 
-    @s.app.get('/releases')
+    @api.app.get('/releases')
     def releases_page():
-        return r.template
+        return homepage.releases.template
 
-    @s.app.get('/lineup')
+    @api.app.get('/lineup')
     def lineup_page():
-        return l.template
+        return homepage.lineup.template
 
-    @s.app.get('/shows')
+    @api.app.get('/shows')
     def gigs_page():
-        return g.template
+        return homepage.gigs.template
 
-    @s.app.get('/gallery')
+    @api.app.get('/gallery')
     def gallery_page():
-        return gal.template
+        return homepage.gallery.template
 
-    @s.app.get('/merch')
+    @api.app.get('/merch')
     def merch_page():
-        return m.template
+        return homepage.merch.template
 
-    @s.app.get('/imprint')
+    @api.app.get('/imprint')
     @bottle.view('impressum')
     def impressum_page():
-        return dict(contact_email=s.get_contact_email(), get_static_url=s.get_static_url)
+        return dict(contact_email=api.get_contact_email(), get_static_url=api.get_static_url)
 
-    @s.app.get('/presskit')
+    @api.app.get('/presskit')
     def static_presskit():
-        path = pathlib.Path(p.zip_file)
+        path = pathlib.Path(homepage.presskit.zip_file)
         return bottle.static_file(path.name, root=path.parent, download='Kali Yuga EPK', mimetype='application/zip')
 
-    s.run()
+    api.run()
