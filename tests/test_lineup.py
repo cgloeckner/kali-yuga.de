@@ -1,15 +1,12 @@
 import unittest
-import pathlib
 
 import controller
-
-from .ServerMock import ServerMock
 
 
 class TestLineupModule(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.server = ServerMock()
+        self.server = controller.BaseWebServer()
         self.lineup = controller.Lineup(self.server)
 
     def test_data_validation(self):

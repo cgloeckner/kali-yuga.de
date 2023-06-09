@@ -1,16 +1,13 @@
 import unittest
-import pathlib
 import datetime
 
 import controller
-
-from .ServerMock import ServerMock
 
 
 class TestGigsModule(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.server = ServerMock()
+        self.server = controller.BaseWebServer()
         self.gigs = controller.Gigs(self.server)
 
     def test_process_gigs(self):

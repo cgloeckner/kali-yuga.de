@@ -1,12 +1,12 @@
 import zipfile
 
-from .modules import ServerApi
+from .modules import BaseWebServer
 
 
 class Presskit:
-    def __init__(self, api: ServerApi) -> None:
+    def __init__(self, api: BaseWebServer) -> None:
         self.server = api
-        self.root = api.get_local_root() / 'model' / 'presskit'
+        self.root = api.local_root / 'model' / 'presskit'
         self.zip_file = api.get_static_path() / 'presskit.zip'
 
     def build(self) -> None:

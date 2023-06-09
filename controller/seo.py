@@ -3,7 +3,7 @@ import xml.etree.ElementTree as et
 
 from typing import List
 
-from .modules import ServerApi
+from .modules import BaseWebServer
 
 
 class Sitemap(List[str]):
@@ -21,7 +21,7 @@ class Sitemap(List[str]):
 
 
 class RobotsTxt:
-    def __init__(self, api: ServerApi, path_to_sitemap: str) -> None:
+    def __init__(self, api: BaseWebServer, path_to_sitemap: str) -> None:
         self.api = api
         self.path_to_sitemap = path_to_sitemap
 

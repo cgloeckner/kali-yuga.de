@@ -1,15 +1,12 @@
 import unittest
-import pathlib
 
 import controller
-
-from .ServerMock import ServerMock
 
 
 class TestMerchModule(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.server = ServerMock()
+        self.server = controller.BaseWebServer()
         self.merch = controller.Merch(self.server)
 
     def test_MerchCategory_caption(self):

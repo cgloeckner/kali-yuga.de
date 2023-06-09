@@ -6,7 +6,7 @@ from typing import Dict, List
 from enum import auto
 from strenum import LowercaseStrEnum
 
-from .modules import BaseModule, ServerApi
+from .modules import BaseModule, BaseWebServer
 
 
 class MerchCategory(LowercaseStrEnum):
@@ -26,7 +26,7 @@ class MerchCategory(LowercaseStrEnum):
 
 
 class Merch(BaseModule):
-    def __init__(self, api: ServerApi) -> None:
+    def __init__(self, api: BaseWebServer) -> None:
         super().__init__(api)
         self.data = dict()
 
@@ -38,7 +38,7 @@ class Merch(BaseModule):
         return self.data[MerchCategory.CDS]
 
     def load_from_file(self, category: MerchCategory) -> None:
-        filename = f'{self.server.get_local_root()}/model/data/{category.value}.toml'
+        filename = f'{self.server.local_root}/model/data/{category.value}.toml'
         with open(filename, 'rb') as file:
             merch = tomli.load(file)
 
@@ -50,4 +50,5 @@ class Merch(BaseModule):
 
     def render(self) -> None:
         self.template = bottle.template('merch/index', module_title='Merchandise', data=self.data,
-                                        merch_email=self.server.get_merch_email(), get_static_url=self.server.get_static_url)
+                                        merch_email=self.server.get_merch_email(),
+                                        get_static_url=self.server.get_static_url)

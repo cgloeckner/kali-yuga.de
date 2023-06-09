@@ -2,11 +2,11 @@ import bottle
 
 from typing import List
 
-from .modules import BaseModule, ServerApi
+from .modules import BaseModule, BaseWebServer
 
 
 class Gallery(BaseModule):
-    def __init__(self, api: ServerApi) -> None:
+    def __init__(self, api: BaseWebServer) -> None:
         super().__init__(api)
 
         self.data = list()

@@ -1,14 +1,11 @@
-import tomli
 import bottle
 
-from typing import Dict, List
-
-from .modules import BaseModule, ServerApi
+from .modules import BaseModule, BaseWebServer
 from .merch import Merch
 
 
 class Releases(BaseModule):
-    def __init__(self, api: ServerApi) -> None:
+    def __init__(self, api: BaseWebServer) -> None:
         super().__init__(api)
         self.data = dict()
 
@@ -16,4 +13,5 @@ class Releases(BaseModule):
         self.data = merch.get_cds()
 
     def render(self) -> None:
-        self.template = bottle.template('releases/index', module_title='Releases', data=self.data, get_static_url=self.server.get_static_url)
+        self.template = bottle.template('releases/index', module_title='Releases', data=self.data,
+                                        get_static_url=self.server.get_static_url)

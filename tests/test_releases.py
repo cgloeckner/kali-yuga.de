@@ -2,13 +2,11 @@ import unittest
 
 import controller
 
-from .ServerMock import ServerMock
-
 
 class TestReleasesModule(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.server = ServerMock()
+        self.server = controller.BaseWebServer()
         self.merch = controller.Merch(self.server)
 
         for category_str in controller.MerchCategory:

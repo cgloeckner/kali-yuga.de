@@ -6,7 +6,7 @@ from . import server, modules, feed, releases, lineup, gigs, gallery, merch, pre
 
 
 class Homepage:
-    def __init__(self, api: modules.ServerApi) -> None:
+    def __init__(self, api: modules.BaseWebServer) -> None:
         # load feed
         self.feed = feed.Feed(api=api)
         self.feed.load_from_file()
@@ -44,18 +44,18 @@ class Homepage:
 
         # build sitemap.xml
         self.sitemap = seo.Sitemap()
-        self.sitemap.append(f'https://www.kali-yuga.de')
-        self.sitemap.append(f'https://www.kali-yuga.de/')
-        self.sitemap.append(f'https://www.kali-yuga.de/releases')
-        self.sitemap.append(f'https://www.kali-yuga.de/lineup')
-        self.sitemap.append(f'https://www.kali-yuga.de/shows')
-        self.sitemap.append(f'https://www.kali-yuga.de/gallery')
-        self.sitemap.append(f'https://www.kali-yuga.de/merch')
-        self.sitemap.append(f'https://www.kali-yuga.de/contact')
-        self.sitemap.append(f'https://www.kali-yuga.de/imprint')
+        self.sitemap.append(f'https://www.{api.domain}')
+        self.sitemap.append(f'https://www.{api.domain}/')
+        self.sitemap.append(f'https://www.{api.domain}/releases')
+        self.sitemap.append(f'https://www.{api.domain}/lineup')
+        self.sitemap.append(f'https://www.{api.domain}/shows')
+        self.sitemap.append(f'https://www.{api.domain}/gallery')
+        self.sitemap.append(f'https://www.{api.domain}/merch')
+        self.sitemap.append(f'https://www.{api.domain}/contact')
+        self.sitemap.append(f'https://www.{api.domain}/imprint')
 
         # build robots.txt
-        self.robots = seo.RobotsTxt(api, 'https://www.kali-yuga.de/sitemap.xml')
+        self.robots = seo.RobotsTxt(api, f'https://www.{api.domain}/sitemap.xml')
 
     @staticmethod
     def export_html(html: str, filename: pathlib.Path) -> None:
@@ -71,7 +71,7 @@ def main(server_kwargs, render_only: bool):
     homepage = Homepage(api)
 
     # export html
-    root = api.get_build_root()
+    root = api.get_build_path()
     root.mkdir(exist_ok=True)
 
     homepage.export_html(homepage.feed.template, root / 'index.html')
@@ -94,8 +94,8 @@ def main(server_kwargs, render_only: bool):
     homepage.export_html(contact, root / 'contact.html')
 
     # render sitemap and robots.txt
-    homepage.sitemap.save_to_xml(api.get_build_root() / 'sitemap.xml')
-    homepage.robots.save_to_txt(api.get_build_root() / 'robots.txt')
+    homepage.sitemap.save_to_xml(api.get_build_path() / 'sitemap.xml')
+    homepage.robots.save_to_txt(api.get_build_path() / 'robots.txt')
 
     if render_only:
         return
@@ -141,16 +141,16 @@ def main(server_kwargs, render_only: bool):
     @api.app.get('/presskit')
     def static_presskit():
         path = pathlib.Path(homepage.presskit.zip_file)
-        return bottle.static_file(path.name, root=path.parent, download='Kali Yuga EPK', mimetype='application/zip')
+        return bottle.static_file(path.name, root=path.parent, download=f'{api.domain} EPK.zip', mimetype='application/zip')
 
     @api.app.get('/robots.txt')
     def robots_txt():
-        robots_root = api.get_build_root()
+        robots_root = api.get_build_path()
         return bottle.static_file('robots.txt', root=robots_root)
 
     @api.app.get('/sitemap.xml')
     def robots_txt():
-        robots_root = api.get_build_root()
+        robots_root = api.get_build_path()
         return bottle.static_file('sitemap.xml', root=robots_root)
 
     api.run()

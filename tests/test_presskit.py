@@ -2,13 +2,11 @@ import unittest
 
 import controller
 
-from .ServerMock import ServerMock
-
 
 class TestPresskitModule(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.server = ServerMock()
+        self.server = controller.BaseWebServer()
         self.presskit = controller.Presskit(self.server)
 
     def test_data_validation(self):

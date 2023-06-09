@@ -1,83 +1,29 @@
-import pathlib
+from gevent import monkey; monkey.patch_all()
+
 import requests
+import bottle
 
 from typing import Dict
 
-from gevent import monkey; monkey.patch_all()
-import bottle
-
-from .modules import ServerApi
+from .modules import BaseWebServer
 
 
-def get_email_address(recipient: str, domain: str) -> str:
-    return f'{recipient}@{domain}'
-
-
-class WebServer(ServerApi):
+class WebServer(BaseWebServer):
 
     def __init__(self, args: Dict) -> None:
-        self.local_root = pathlib.Path('./')
+        super().__init__()
         self.args = args
 
+        self.debug = args['debug']
+        self.reverse_proxy = args['reverse_proxy']
+        self.domain = args['domain']
+
         self.app = bottle.default_app()
-        self.app.catchall = self.args['debug']
-
-    def get_contact_email(self) -> str:
-        return get_email_address('kontakt', self.args['domain'])
-
-    def get_merch_email(self) -> str:
-        return get_email_address('merch', self.args['domain'])
-
-    def get_booking_email(self) -> str:
-        return get_email_address('booking', self.args['domain'])
-
-    def get_webmaster_email(self) -> str:
-        return get_email_address('webmaster', self.args['domain'])
-
-    def get_local_root(self) -> pathlib.Path:
-        return self.local_root
-
-    def get_build_root(self) -> pathlib.Path:
-        return self.local_root / '.build'
-
-    def get_static_url(self, relative_url: str) -> str:
-        if self.args['reverse_proxy']:
-            domain = self.args['domain']
-            return f'https://static.{domain}{relative_url}'
-
-        return f'/static{relative_url}'
-
-    def get_static_path(self) -> pathlib.Path:
-        """Returns local path to static files (css sheets etc.)"""
-        return self.local_root / 'views' / 'static'
-
-    def run(self) -> None:
-        bottle.run(
-            host=self.args['host'],
-            port=self.args['port'],
-            debug=self.args['debug'],
-            reloader=self.args['reloader'],
-            quiet=self.args['quiet'],
-            server=self.args['server']
-        )
-
-    def get_public_url(self, route: str = '') -> str:
-        """Returns the public uri with or without a route. HTTPS is assumed in production mode.
-        e.g. https://example.com/foo/bar
-        """
-        base = 'http'
-        if not self.args['debug']:
-            base += 's'
-
-        base += '://' + self.args['domain']
-
-        if route != '':
-            base += '/' + route
-        return base
+        self.app.catchall = self.debug
 
     def get_client_ip(self, request: bottle.Request) -> str:
         """Returns client's ip address based on the given request."""
-        if self.args['debug']:
+        if self.debug:
             return request.environ.get('REMOTE_ADDR')
 
         # default: app runs behind reverse proxy
@@ -94,3 +40,13 @@ class WebServer(ServerApi):
             return requests.get('https://api.ipify.org').text
         except requests.exceptions.ReadTimeout as e:
             return 'localhost'
+
+    def run(self) -> None:
+        bottle.run(
+            host=self.args['host'],
+            port=self.args['port'],
+            debug=self.args['debug'],
+            reloader=self.args['reloader'],
+            quiet=self.args['quiet'],
+            server=self.args['server']
+        )

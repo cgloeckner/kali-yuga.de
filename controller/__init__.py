@@ -1,4 +1,5 @@
 from .main import main
+from .modules import BaseWebServer
 
 from .feed import Feed
 from .releases import Releases
