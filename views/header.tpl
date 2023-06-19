@@ -26,6 +26,7 @@
 %title = ' - '.join(title)
     <title>{{title}}</title>
 %url = '' if module_name == 'feed' else module_name
+%url = 'imprint' if module_name == 'impressum' else module_name
     <link rel="canonical" href="https://www.kali-yuga.de/{{url}}">
     <meta name="title" content="{{title}}">
     <meta name="description" content="{{description}}">
